@@ -1,0 +1,534 @@
+/* ==========================================================================
+   RRABS - Industries Hub Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.industries-hub-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #F8FAFC;
+  color: #344767;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.ind-hero {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 60px 0 76px;
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.ind-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ind-hero-main-img {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.ind-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 36%,
+    rgba(6, 43, 80, 0.96) 44%,
+    rgba(6, 43, 80, 0.65) 55%,
+    rgba(6, 43, 80, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* Diagonal Green Accent */
+.ind-hero-green-slash {
+  position: absolute;
+  top: -40px;
+  right: 28%;
+  width: 80px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.9) 0%, rgba(36, 185, 214, 0.4) 100%);
+  transform: skewX(-26deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Right collage tiles matching screenshot */
+.ind-hero-collage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  z-index: 2;
+  overflow: hidden;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ind-collage-tile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ind-hero-collage:hover .ind-collage-tile {
+  transform: scale(1.04);
+}
+
+/* Wireframe line art on left */
+.ind-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ind-hero-container {
+  position: relative;
+  z-index: 4;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-hero-content {
+  max-width: 600px;
+}
+
+/* Breadcrumb */
+.ind-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.ind-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ind-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.ind-breadcrumb-sep {
+  color: #64748B;
+  font-size: 14px;
+  user-select: none;
+}
+
+.ind-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Heading */
+.ind-hero-heading {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.14;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.ind-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  max-width: 560px;
+}
+
+/* --------------------------------------------------------------------------
+   2. INDUSTRIES CARDS GRID SECTION
+   -------------------------------------------------------------------------- */
+.ind-grid-section {
+  padding: 64px 0 80px;
+  background-color: #F8FAFC;
+}
+
+.ind-grid-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ind-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(6, 43, 80, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ind-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(6, 43, 80, 0.12);
+  border-color: #24B9D6;
+}
+
+/* Card image */
+.ind-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: #062B50;
+}
+
+.ind-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ind-card:hover .ind-card-img {
+  transform: scale(1.04);
+}
+
+/* Overlapping Icon badge */
+.ind-card-badge {
+  position: absolute;
+  top: 184px;
+  left: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(8, 121, 209, 0.12);
+  transition: all 0.25s ease;
+}
+
+.ind-card:hover .ind-card-badge {
+  border-color: #0879D1;
+  background: #F1F8FC;
+}
+
+/* Card Content Area */
+.ind-card-body {
+  padding: 38px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ind-card-title {
+  font-size: 23px;
+  font-weight: 800;
+  color: #062B50;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.ind-card-description {
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: #4A5568;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+/* Card Actions */
+.ind-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.ind-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0879D1;
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.ind-card:hover .ind-card-link {
+  color: #055ba0;
+  gap: 10px;
+}
+
+.ind-card-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #08A63F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(8, 166, 63, 0.3);
+  transition: all 0.25s ease;
+}
+
+.ind-card:hover .ind-card-arrow-btn {
+  background: #079137;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(8, 166, 63, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.ind-cta-banner {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ind-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ind-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.ind-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 25%,
+    rgba(6, 43, 80, 0.75) 45%,
+    rgba(6, 43, 80, 0.25) 65%,
+    transparent 85%
+  );
+}
+
+.ind-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.8) 0%, rgba(36, 185, 214, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-cta-content {
+  max-width: 620px;
+}
+
+.ind-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.ind-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #062B50;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.ind-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ind-hero-heading {
+    font-size: 38px;
+  }
+
+  .ind-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .ind-hero-collage {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ind-hero {
+    padding: 44px 0 54px;
+  }
+
+  .ind-hero-heading {
+    font-size: 32px;
+  }
+
+  .ind-hero-collage {
+    display: none;
+  }
+
+  .ind-hero-main-img {
+    width: 100%;
+    left: 0;
+    opacity: 0.35;
+  }
+
+  .ind-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 39, 70, 0.95) 0%,
+      rgba(6, 43, 80, 0.98) 100%
+    );
+  }
+
+  .ind-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ind-card-img-wrapper {
+    height: 190px;
+  }
+
+  .ind-card-badge {
+    top: 164px;
+  }
+
+  .ind-cta-banner {
+    padding: 44px 0;
+  }
+
+  .ind-cta-img {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .ind-cta-text {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ind-hero-heading {
+    font-size: 28px;
+  }
+
+  .ind-card-body {
+    padding: 34px 20px 20px;
+  }
+
+  .ind-card-title {
+    font-size: 21px;
+  }
+}

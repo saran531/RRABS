@@ -1,0 +1,892 @@
+/* ==========================================================================
+   RRABS - MEP Services in Madurai Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.mep-madurai-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #263B63;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.mep-hero {
+  position: relative;
+  background-color: #06264B;
+  color: #FFFFFF;
+  padding: 60px 0 76px;
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.mep-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mep-hero-images-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  display: flex;
+}
+
+.mep-hero-bldg-img {
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.mep-hero-temple-img {
+  width: 38%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.mep-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #051f3c 0%,
+    #06264B 36%,
+    rgba(6, 38, 75, 0.96) 44%,
+    rgba(6, 38, 75, 0.65) 55%,
+    rgba(6, 38, 75, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+.mep-hero-accent-slash {
+  position: absolute;
+  top: -40px;
+  left: 45%;
+  width: 90px;
+  height: 520px;
+  background: linear-gradient(135deg, rgba(0, 168, 90, 0.85) 0%, rgba(0, 102, 232, 0.35) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mep-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  width: 520px;
+  height: 100%;
+  opacity: 0.22;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mep-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mep-hero-content {
+  max-width: 580px;
+}
+
+.mep-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.mep-breadcrumb a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mep-breadcrumb a:hover {
+  color: #00A85A;
+}
+
+.mep-breadcrumb-sep {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.mep-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.mep-hero-heading {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.mep-hero-paragraph {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #DCE8F6;
+  max-width: 530px;
+  margin-bottom: 28px;
+}
+
+.mep-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mep-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: #00A85A;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 168, 90, 0.3);
+}
+
+.mep-btn-primary:hover {
+  background-color: #008f4c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 168, 90, 0.4);
+}
+
+.mep-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background-color: rgba(6, 38, 74, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.mep-btn-secondary:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. LOCAL CAPABILITY SECTION
+   -------------------------------------------------------------------------- */
+.mep-capability-section {
+  padding: 48px 0;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.mep-capability-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.mep-capability-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mep-capability-card {
+  display: grid;
+  grid-template-columns: 70px 1fr 460px;
+  gap: 28px;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 14px;
+}
+
+.mep-capability-icon-box {
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid #D9EAFE;
+  background-color: #F0F7FF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00A85A;
+}
+
+.mep-capability-text-wrap {
+  padding-right: 16px;
+}
+
+.mep-capability-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #06264B;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.mep-capability-paragraph {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5C7088;
+}
+
+.mep-capability-image-wrap {
+  position: relative;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(6, 38, 74, 0.08);
+}
+
+.mep-capability-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.mep-capability-image-accent {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(0, 168, 90, 0.85) 0%, rgba(0, 102, 232, 0.4) 100%);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. WHAT WE PROVIDE IN MADURAI
+   -------------------------------------------------------------------------- */
+.mep-services-section {
+  padding: 56px 0 64px;
+  background-color: #F3F9FF;
+}
+
+.mep-services-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mep-services-header {
+  margin-bottom: 32px;
+}
+
+.mep-services-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #06264B;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.mep-services-intro {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5C7088;
+  max-width: 1080px;
+}
+
+.mep-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mep-services-row-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.mep-services-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.mep-service-card {
+  background: #FFFFFF;
+  border: 1px solid #D9EAFE;
+  border-radius: 12px;
+  padding: 16px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  min-height: 155px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(6, 38, 74, 0.03);
+}
+
+.mep-service-card:hover {
+  transform: translateY(-3px);
+  border-color: #0066E8;
+  box-shadow: 0 8px 24px rgba(0, 102, 232, 0.1);
+}
+
+.mep-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.mep-card-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #EEF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mep-card-thumb-wrap {
+  width: 105px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+  flex-shrink: 0;
+}
+
+.mep-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.mep-card-body {
+  margin-bottom: 12px;
+}
+
+.mep-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #06264B;
+  margin-bottom: 4px;
+}
+
+.mep-card-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #5C7088;
+}
+
+.mep-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mep-card-arrow-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #EEF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0066E8;
+  transition: all 0.2s ease;
+}
+
+.mep-service-card:hover .mep-card-arrow-circle {
+  background-color: #0066E8;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. WHY INTEGRATED BUILDING SYSTEMS MATTER
+   -------------------------------------------------------------------------- */
+.mep-integrated-section {
+  padding: 64px 0 68px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.mep-integrated-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.mep-integrated-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.mep-integrated-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.mep-integrated-heading {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #06264B;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.mep-integrated-paragraph {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #5C7088;
+}
+
+/* Diagram Layout */
+.mep-diagram-wrapper {
+  display: grid;
+  grid-template-columns: 140px 1fr 170px;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.mep-diagram-col-left,
+.mep-diagram-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2;
+}
+
+.mep-diagram-tag {
+  background: #FFFFFF;
+  border: 1px solid #D9EAFE;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(6, 38, 74, 0.05);
+  font-size: 13px;
+  font-weight: 600;
+  color: #06264B;
+  white-space: nowrap;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.mep-diagram-tag:hover {
+  border-color: #0066E8;
+  transform: scale(1.02);
+}
+
+.mep-tag-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mep-tag-label-sub {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: #64748B;
+  margin-top: 1px;
+}
+
+.mep-diagram-center-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(6, 38, 74, 0.12);
+  z-index: 1;
+}
+
+.mep-diagram-center-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Connector lines overlay */
+.mep-diagram-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. FAQS SECTION
+   -------------------------------------------------------------------------- */
+.mep-faqs-section {
+  padding: 56px 0 68px;
+  background-color: #F3F9FF;
+}
+
+.mep-faqs-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mep-faqs-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #06264B;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.mep-faqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mep-faq-card {
+  background: #FFFFFF;
+  border: 1px solid #D9EAFE;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 10px rgba(6, 38, 74, 0.03);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mep-faq-card:hover {
+  border-color: #BACEE6;
+}
+
+.mep-faq-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mep-faq-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.mep-faq-badge {
+  width: 28px;
+  height: 28px;
+  background-color: #00A85A;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mep-faq-content {
+  flex: 1;
+}
+
+.mep-faq-question {
+  font-size: 15px;
+  font-weight: 700;
+  color: #06264B;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.mep-faq-answer {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #5C7088;
+}
+
+.mep-faq-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #EEF6FF;
+  color: #0066E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.mep-faq-card:hover .mep-faq-btn {
+  background-color: #0066E8;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   6. BOTTOM CTA BANNER
+   -------------------------------------------------------------------------- */
+.mep-cta-banner {
+  position: relative;
+  background-color: #06264B;
+  color: #FFFFFF;
+  padding: 64px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.mep-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mep-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.mep-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #051f3c 0%,
+    #06264B 42%,
+    rgba(6, 38, 74, 0.92) 56%,
+    rgba(6, 38, 74, 0.35) 75%,
+    rgba(6, 38, 74, 0.1) 100%
+  );
+}
+
+.mep-cta-green-slash {
+  position: absolute;
+  top: -30px;
+  left: 52%;
+  width: 90px;
+  height: 320px;
+  background: linear-gradient(135deg, rgba(0, 168, 90, 0.85) 0%, rgba(0, 102, 232, 0.35) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mep-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 440px;
+  height: 100%;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mep-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mep-cta-content {
+  max-width: 600px;
+}
+
+.mep-cta-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.mep-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #00A85A;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.mep-btn-cta-quote:hover {
+  background: #F3F9FF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .mep-capability-card {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .mep-capability-image-wrap {
+    grid-column: 1 / -1;
+    height: 220px;
+  }
+
+  .mep-services-row-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mep-services-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mep-integrated-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 860px) {
+  .mep-hero-heading {
+    font-size: 36px;
+  }
+
+  .mep-diagram-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mep-diagram-col-left,
+  .mep-diagram-col-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mep-diagram-svg-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mep-hero {
+    padding: 40px 0 50px;
+    min-height: auto;
+  }
+
+  .mep-hero-heading {
+    font-size: 28px;
+  }
+
+  .mep-hero-images-wrap {
+    width: 100%;
+    opacity: 0.2;
+  }
+
+  .mep-hero-gradient {
+    background: #06264B;
+  }
+
+  .mep-capability-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mep-services-row-top,
+  .mep-services-row-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .mep-cta-title {
+    font-size: 22px;
+  }
+
+  .mep-cta-img {
+    display: none;
+  }
+}

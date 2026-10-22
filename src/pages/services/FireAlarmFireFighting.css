@@ -1,0 +1,808 @@
+/* ========================================================
+   RRABS FIRE ALARM & FIRE FIGHTING SERVICES PAGE STYLESHEET
+   Matches reference screenshot exactly
+   ======================================================== */
+
+.fire-services-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-white);
+  color: #334155;
+  font-family: var(--font-main);
+}
+
+/* Common Section Eyebrow, Heading & Text */
+.fire-eyebrow-line {
+  display: inline-block;
+  width: 18px;
+  height: 2.5px;
+  background-color: #079B36;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.fire-section-heading {
+  color: #102A43;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.fire-paragraph {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+/* Pill Outline Buttons */
+.fire-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  border: 1.5px solid #0878BD;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: #102A43;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 24px;
+  transition: all 0.25s ease;
+}
+
+.fire-btn-outline:hover {
+  background-color: #EEF8FD;
+  border-color: #079B36;
+  color: #079B36;
+  transform: translateX(3px);
+}
+
+.fire-btn-outline:hover svg {
+  stroke: #079B36;
+}
+
+/* ========================================================
+   1. HERO SECTION
+   ======================================================== */
+.fire-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background-color: #052641;
+  overflow: hidden;
+}
+
+.fire-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.fire-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.fire-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.98) 36%,
+    rgba(5, 38, 65, 0.88) 46%,
+    rgba(5, 38, 65, 0.45) 58%,
+    rgba(5, 38, 65, 0.1) 72%,
+    transparent 85%,
+    transparent 100%
+  );
+}
+
+/* Decorative Mesh on Hero Left */
+.fire-hero-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 2;
+}
+
+/* Green Diagonal Accent on Hero Right */
+.fire-hero-green-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.fire-hero-green-accent::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 180px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(7, 155, 54, 0.28) 0%, rgba(19, 184, 63, 0.02) 100%);
+  transform: rotate(32deg);
+  border-left: 2px solid rgba(19, 184, 63, 0.55);
+}
+
+.fire-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.fire-hero-content {
+  max-width: 660px;
+}
+
+/* Breadcrumb */
+.fire-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 24px;
+}
+
+.fire-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.fire-breadcrumb a:hover {
+  color: #38BDF8;
+}
+
+.fire-breadcrumb-sep {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.fire-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.fire-hero-heading {
+  color: #FFFFFF;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -1px;
+  margin-bottom: 22px;
+}
+
+.fire-hero-paragraph {
+  color: #CBD5E1;
+  font-size: 15.5px;
+  line-height: 1.68;
+  margin-bottom: 32px;
+}
+
+/* Two Hero Buttons */
+.fire-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: linear-gradient(135deg, #079B36 0%, #13B83F 100%);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(7, 155, 54, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-hero-quote:hover {
+  background: linear-gradient(135deg, #05822d 0%, #0fa036 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(7, 155, 54, 0.45);
+}
+
+.btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+.btn-hero-explore:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ========================================================
+   2. FIRE ALARM SYSTEMS SECTION
+   ======================================================== */
+.fire-alarm-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+/* Pipe blueprint line art along left edge */
+.fire-pipes-left-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.fire-two-col-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.fire-feature-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: #EEF8FD;
+  border: 1.5px solid #0878BD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(8, 120, 189, 0.12);
+}
+
+.fire-media-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(7, 52, 91, 0.08);
+  border: 1px solid #E2E8F0;
+  height: 300px;
+}
+
+.fire-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.fire-media-box:hover .fire-photo {
+  transform: scale(1.03);
+}
+
+/* Diagonal Green Corner Accent on Image */
+.fire-media-green-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, transparent 50%, #079B36 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fire-media-green-corner-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #079B36 50%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ========================================================
+   3. FIRE FIGHTING SYSTEMS SECTION
+   ======================================================== */
+.fire-fighting-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: #F3F6FA;
+  overflow: hidden;
+}
+
+.fire-pipes-right-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.fire-two-col-inverted {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+/* ========================================================
+   4. LIFE & PROPERTY SAFETY SECTION
+   ======================================================== */
+.fire-safety-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #F1F5F9;
+  overflow: hidden;
+}
+
+.fire-safety-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Connected Building Diagram */
+.fire-diagram-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.fire-side-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  z-index: 3;
+}
+
+.fire-left-nodes {
+  align-items: flex-end;
+}
+
+.fire-node-item {
+  display: flex;
+  align-items: center;
+}
+
+.fire-node-left {
+  justify-content: flex-end;
+}
+
+.fire-node-right {
+  justify-content: flex-start;
+}
+
+.fire-node-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(7, 52, 91, 0.04);
+  transition: all 0.25s ease;
+}
+
+.fire-node-card:hover {
+  border-color: #079B36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(7, 155, 54, 0.12);
+}
+
+.fire-node-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #079B36;
+  flex-shrink: 0;
+}
+
+.fire-node-card-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #102A43;
+  white-space: nowrap;
+}
+
+.fire-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #079B36;
+  flex-shrink: 0;
+}
+
+/* Center Building Container */
+.fire-center-frame {
+  position: relative;
+  width: 320px;
+  margin: 0;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7, 52, 91, 0.12);
+  border: 1px solid rgba(8, 120, 189, 0.2);
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.fire-building-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Center Badge over Building */
+.fire-center-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #052641;
+  border: 3px solid #079B36;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #FFFFFF;
+  z-index: 3;
+}
+
+.fire-center-badge-text {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  color: #FFFFFF;
+}
+
+/* ========================================================
+   5. FREQUENTLY ASKED QUESTIONS SECTION
+   ======================================================== */
+.fire-faq-section {
+  padding: 72px 24px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #F1F5F9;
+}
+
+.fire-faq-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.fire-faq-header {
+  margin-bottom: 36px;
+}
+
+.fire-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.fire-faq-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(7, 52, 91, 0.04);
+  padding: 24px 28px;
+  transition: all 0.25s ease;
+}
+
+.fire-faq-card:hover {
+  border-color: rgba(7, 155, 54, 0.4);
+  box-shadow: 0 6px 16px rgba(7, 52, 91, 0.08);
+}
+
+.fire-faq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+.fire-faq-question {
+  color: #102A43;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.fire-faq-toggle {
+  color: #079B36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.fire-faq-answer {
+  margin-top: 16px;
+  color: #334155;
+  font-size: 14.5px;
+  line-height: 1.65;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+}
+
+/* ========================================================
+   6. FINAL CALL-TO-ACTION BANNER
+   ======================================================== */
+.fire-cta-section {
+  position: relative;
+  width: 100%;
+  background-color: #052641;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.fire-cta-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+}
+
+.fire-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.fire-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.75) 18%,
+    rgba(5, 38, 65, 0.25) 42%,
+    transparent 68%
+  );
+}
+
+/* Green Diagonal Accent Graphic */
+.fire-cta-green-accent {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 65px;
+  height: 100%;
+  background: linear-gradient(135deg, #079B36 0%, #13B83F 100%);
+  transform: skewX(-24deg);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(7, 155, 54, 0.35);
+}
+
+.fire-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.fire-cta-content {
+  max-width: 680px;
+}
+
+.fire-cta-heading {
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: -0.4px;
+}
+
+.fire-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 26px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
+  border-radius: var(--radius-full);
+  color: #079B36;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.fire-cta-btn:hover {
+  background-color: #E8F7EF;
+  border-color: #079B36;
+  color: #079B36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.fire-cta-btn .cta-arrow-right {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.fire-cta-btn:hover .cta-arrow-right {
+  transform: translateX(4px);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (Desktop, Tablet, Mobile)
+   ======================================================== */
+@media (max-width: 1000px) {
+  .fire-hero-heading {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fire-two-col-container,
+  .fire-two-col-inverted,
+  .fire-safety-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .fire-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fire-diagram-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fire-side-nodes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .fire-left-nodes, .fire-right-nodes {
+    align-items: center;
+  }
+
+  .fire-center-frame {
+    width: 100%;
+    max-width: 480px;
+    margin: 12px 0;
+  }
+
+  .fire-connector-line {
+    display: none;
+  }
+
+  .fire-cta-bg {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .fire-cta-green-accent {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .fire-hero-heading {
+    font-size: 30px;
+  }
+
+  .fire-section-heading {
+    font-size: 24px;
+  }
+
+  .fire-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-quote,
+  .btn-hero-explore {
+    justify-content: center;
+  }
+
+  .fire-alarm-section,
+  .fire-fighting-section,
+  .fire-safety-section,
+  .fire-faq-section,
+  .fire-cta-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .fire-cta-heading {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,803 @@
+/* ==========================================================================
+   RRABS - Projects Portfolio Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.projects-portfolio-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #334155;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER
+   -------------------------------------------------------------------------- */
+.port-hero {
+  position: relative;
+  background-color: #102A43;
+  color: #FFFFFF;
+  padding: 64px 0 76px;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.port-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.port-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay blending deep navy smoothly into the building photo */
+.port-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #0d2238 0%,
+    #102A43 36%,
+    rgba(16, 42, 67, 0.96) 44%,
+    rgba(16, 42, 67, 0.65) 55%,
+    rgba(16, 42, 67, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Diagonal green accent stripe */
+.port-hero-accent-slash {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 110px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(11, 159, 69, 0.85) 0%, rgba(23, 105, 170, 0.4) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Blueprint mesh overlay */
+.port-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.port-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.port-hero-content {
+  max-width: 620px;
+}
+
+.port-hero-heading {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.port-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  max-width: 560px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. PROJECTS PORTFOLIO INTRODUCTION SECTION
+   -------------------------------------------------------------------------- */
+.port-intro-section {
+  padding: 72px 0;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.port-intro-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.port-intro-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.port-eyebrow-line {
+  display: block;
+  width: 38px;
+  height: 3px;
+  background-color: #0B9F45;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.port-intro-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #102A43;
+  line-height: 1.22;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.port-intro-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #4A5568;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+/* Seven service tiles row */
+.port-services-tiles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.port-service-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 10px;
+  min-width: 70px;
+  box-shadow: 0 2px 8px rgba(16, 42, 67, 0.04);
+  transition: all 0.2s ease;
+}
+
+.port-service-tile:hover {
+  transform: translateY(-2px);
+  border-color: #24B9D6;
+  box-shadow: 0 4px 12px rgba(23, 105, 170, 0.1);
+}
+
+.port-tile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0B9F45;
+}
+
+.port-tile-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #102A43;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Right Column: 4 angled image panels */
+.port-collage-container {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 270px;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.port-collage-panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.1);
+  transform: skewX(-7deg);
+  transition: transform 0.3s ease, flex 0.3s ease;
+}
+
+.port-collage-panel:hover {
+  flex: 1.15;
+}
+
+.port-collage-img {
+  width: 140%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: -20%;
+  transform: skewX(7deg);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. OUR PROJECTS SECTION
+   -------------------------------------------------------------------------- */
+.port-projects-section {
+  padding: 68px 0 88px;
+  background-color: #F3F6FA;
+}
+
+.port-projects-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Top bar with heading and view toggle buttons */
+.port-projects-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.port-projects-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #102A43;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.port-view-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.port-view-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #DCEAF4;
+  background: #FFFFFF;
+  color: #1769AA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.port-view-btn:hover {
+  background: #F1F8FC;
+  border-color: #1769AA;
+}
+
+.port-view-btn.active {
+  background: #1769AA;
+  border-color: #1769AA;
+  color: #FFFFFF;
+}
+
+/* Category filter buttons row */
+.port-filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.port-filter-btn {
+  padding: 8px 22px;
+  border-radius: 50px;
+  border: 1px solid #DCEAF4;
+  background: #FFFFFF;
+  color: #102A43;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.port-filter-btn:hover {
+  background: #F8FAFC;
+  border-color: #24B9D6;
+}
+
+.port-filter-btn.active {
+  background: #0B9F45;
+  border-color: #0B9F45;
+  color: #FFFFFF;
+  box-shadow: 0 3px 12px rgba(11, 159, 69, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CARDS - GRID VIEW (4 COLUMNS)
+   -------------------------------------------------------------------------- */
+.port-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.port-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.05);
+  transition: all 0.25s ease;
+}
+
+.port-card:hover {
+  transform: translateY(-4px);
+  border-color: #24B9D6;
+  box-shadow: 0 10px 24px rgba(16, 42, 67, 0.1);
+}
+
+.port-card-media {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+  background-color: #102A43;
+}
+
+.port-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.port-card:hover .port-card-img {
+  transform: scale(1.05);
+}
+
+.port-category-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #102A43;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.port-badge-icon {
+  display: flex;
+  align-items: center;
+  color: #0B9F45;
+}
+
+.port-card-body {
+  padding: 18px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.port-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #102A43;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+.port-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.port-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748B;
+}
+
+.port-meta-icon {
+  display: flex;
+  align-items: center;
+  color: #102A43;
+  flex-shrink: 0;
+}
+
+.port-meta-label {
+  font-weight: 700;
+  color: #102A43;
+}
+
+.port-meta-value {
+  color: #64748B;
+}
+
+.port-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1769AA;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.port-card-link:hover {
+  color: #0B9F45;
+  transform: translateX(2px);
+}
+
+/* Card 8 - Placeholder */
+.port-card-placeholder {
+  background: #FFFFFF;
+  border: 1.5px dashed #24B9D6;
+  border-radius: 14px;
+  padding: 32px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.04);
+}
+
+.port-plus-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #102A43;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 16px rgba(16, 42, 67, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.port-card-placeholder:hover .port-plus-circle {
+  transform: scale(1.08) rotate(90deg);
+  background: #0B9F45;
+}
+
+.port-placeholder-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #102A43;
+  margin: 0 0 10px;
+}
+
+.port-placeholder-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #64748B;
+  margin: 0;
+  max-width: 240px;
+}
+
+.port-placeholder-blueprint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CARDS - LIST VIEW
+   -------------------------------------------------------------------------- */
+.port-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.port-cards-list .port-card {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.port-cards-list .port-card-media {
+  width: 280px;
+  height: auto;
+  min-height: 170px;
+  flex-shrink: 0;
+}
+
+.port-cards-list .port-card-body {
+  padding: 20px 24px;
+}
+
+.port-cards-list .port-card-meta {
+  flex-direction: row;
+  gap: 32px;
+}
+
+.port-cards-list .port-card-placeholder {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 24px;
+  padding: 24px 32px;
+}
+
+.port-cards-list .port-plus-circle {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.port-cards-list .port-placeholder-text {
+  max-width: 500px;
+}
+
+/* --------------------------------------------------------------------------
+   4. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.port-cta-banner {
+  position: relative;
+  background-color: #102A43;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.port-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.port-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.port-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #0d2238 0%,
+    #102A43 42%,
+    rgba(16, 42, 67, 0.9) 58%,
+    rgba(16, 42, 67, 0.35) 75%,
+    rgba(16, 42, 67, 0.1) 100%
+  );
+}
+
+.port-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(11, 159, 69, 0.8) 0%, rgba(23, 105, 170, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.port-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.port-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.port-cta-content {
+  max-width: 620px;
+}
+
+.port-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.port-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #102A43;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.port-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .port-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .port-hero-heading {
+    font-size: 38px;
+  }
+
+  .port-intro-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .port-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .port-hero {
+    padding: 48px 0;
+  }
+
+  .port-hero-heading {
+    font-size: 32px;
+  }
+
+  .port-hero-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .port-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(13, 34, 56, 0.95) 0%,
+      rgba(16, 42, 67, 0.98) 100%
+    );
+  }
+
+  .port-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .port-cards-list .port-card {
+    flex-direction: column;
+  }
+
+  .port-cards-list .port-card-media {
+    width: 100%;
+    height: 180px;
+  }
+
+  .port-cards-list .port-card-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .port-collage-container {
+    height: 220px;
+  }
+
+  .port-cta-banner {
+    padding: 44px 0;
+  }
+
+  .port-cta-img {
+    display: none;
+  }
+
+  .port-cta-text {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .port-hero-heading {
+    font-size: 28px;
+  }
+
+  .port-services-tiles {
+    gap: 8px;
+  }
+
+  .port-service-tile {
+    min-width: calc(33.33% - 6px);
+  }
+}

@@ -1,0 +1,903 @@
+/* ==========================================================================
+   RRABS - Building Management Systems (BMS) Service Page Styles
+   Exact UI recreation matching reference design screenshot.
+   ========================================================================== */
+
+.bms-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #344767;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.bms-hero {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0 68px;
+  overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+}
+
+.bms-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bms-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay blending dark navy to image */
+.bms-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 36%,
+    rgba(6, 43, 80, 0.96) 44%,
+    rgba(6, 43, 80, 0.65) 55%,
+    rgba(6, 43, 80, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Diagonal green accent ribbon */
+.bms-hero-accent-slash {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 110px;
+  height: 360px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.85) 0%, rgba(36, 185, 214, 0.4) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Constellation blueprint line-art overlay */
+.bms-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bms-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bms-hero-content {
+  max-width: 620px;
+}
+
+/* Breadcrumb */
+.bms-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.bms-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bms-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.bms-breadcrumb-sep {
+  color: #64748B;
+  font-size: 14px;
+  user-select: none;
+}
+
+.bms-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Heading */
+.bms-hero-heading {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.bms-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+/* Actions */
+.bms-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bms-btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: #08A63F;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(8, 166, 63, 0.35);
+  transition: all 0.25s ease;
+}
+
+.bms-btn-hero-quote:hover {
+  background: #079137;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 166, 63, 0.45);
+}
+
+.bms-btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.bms-btn-hero-explore:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Floating feature badges column on the right edge of Hero */
+.bms-hero-badges-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 4;
+  margin-right: 20px;
+}
+
+.bms-hero-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(6, 43, 80, 0.85);
+  border: 1.5px solid rgba(36, 185, 214, 0.5);
+  border-radius: 10px;
+  padding: 10px 18px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  min-width: 150px;
+  transition: all 0.25s ease;
+}
+
+.bms-hero-badge-card:hover {
+  border-color: #24B9D6;
+  background: rgba(6, 43, 80, 0.95);
+  transform: translateX(-4px);
+}
+
+.bms-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #24B9D6;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED 2-COLUMN SECTION LAYOUT
+   -------------------------------------------------------------------------- */
+.bms-two-col-section {
+  position: relative;
+  padding: 72px 0;
+  overflow: hidden;
+}
+
+.bms-section-white {
+  background-color: #FFFFFF;
+}
+
+.bms-section-pale {
+  background-color: #F1F8FC;
+}
+
+.bms-two-col-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bms-reverse-order .bms-text-col {
+  order: 2;
+}
+
+.bms-reverse-order .bms-media-col {
+  order: 1;
+}
+
+/* Decorative vector line-art */
+.bms-decor-left {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 220px;
+  height: 80%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.bms-decor-right {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 240px;
+  height: 80%;
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+/* Text Column */
+.bms-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bms-feature-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(8, 121, 209, 0.08);
+}
+
+.bms-feature-badge.badge-tint {
+  background-color: #F1F8FC;
+}
+
+.bms-eyebrow-line {
+  display: block;
+  width: 38px;
+  height: 3px;
+  background-color: #08A63F;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.bms-section-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  line-height: 1.22;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.bms-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #4A5568;
+  margin-bottom: 26px;
+  max-width: 520px;
+}
+
+/* Outline pill button */
+.bms-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: #FFFFFF;
+  border: 1.5px solid #0879D1;
+  border-radius: 50px;
+  color: #0879D1;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(8, 121, 209, 0.08);
+  transition: all 0.25s ease;
+}
+
+.bms-btn-outline:hover {
+  background: #0879D1;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(8, 121, 209, 0.25);
+}
+
+.bms-btn-outline:hover svg {
+  stroke: #FFFFFF !important;
+}
+
+/* Media Box */
+.bms-media-box {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(6, 43, 80, 0.12);
+  line-height: 0;
+}
+
+.bms-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.bms-media-box:hover .bms-photo {
+  transform: scale(1.02);
+}
+
+/* Green diagonal corner accents matching screenshot */
+.bms-corner-accent-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #08A63F 0%, #08A63F 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bms-corner-accent-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(315deg, #08A63F 0%, #08A63F 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. WHAT CAN A BMS CONNECT TO? SECTION
+   -------------------------------------------------------------------------- */
+.bms-connect-section {
+  padding: 76px 0 84px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.bms-connect-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Integration diagram area */
+.bms-diagram-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  padding: 20px 0;
+}
+
+.bms-diagram-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 56px;
+  z-index: 3;
+}
+
+.bms-diagram-item {
+  display: flex;
+  align-items: center;
+}
+
+.bms-item-left {
+  justify-content: flex-end;
+}
+
+.bms-item-right {
+  justify-content: flex-start;
+}
+
+.bms-connector-line {
+  width: 36px;
+  height: 0;
+  border-top: 1.5px dashed #24B9D6;
+  flex-shrink: 0;
+}
+
+.bms-connect-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 14px rgba(8, 121, 209, 0.08);
+  min-width: 150px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.bms-connect-card:hover {
+  transform: translateY(-2px);
+  border-color: #0879D1;
+  box-shadow: 0 8px 20px rgba(8, 121, 209, 0.16);
+}
+
+.bms-connect-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0879D1;
+}
+
+.bms-connect-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.25;
+}
+
+/* Central BMS Circle Node */
+.bms-central-node-wrapper {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bms-central-node-outer {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px dashed #24B9D6;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bms-central-node-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0879D1 0%, #062B50 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(6, 43, 80, 0.25);
+  gap: 4px;
+}
+
+.bms-node-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   6. FREQUENTLY ASKED QUESTIONS SECTION
+   -------------------------------------------------------------------------- */
+.bms-faq-section {
+  padding: 64px 0 84px;
+  background-color: #FFFFFF;
+}
+
+.bms-faq-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bms-faq-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  margin-bottom: 32px;
+  letter-spacing: -0.3px;
+}
+
+.bms-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.bms-faq-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(6, 43, 80, 0.04);
+  transition: border-color 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bms-faq-card:hover {
+  border-color: #BEE3F8;
+}
+
+.bms-faq-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.bms-faq-question {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.35;
+}
+
+.bms-faq-toggle-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #08A63F;
+}
+
+.bms-faq-body {
+  padding: 0 22px 22px;
+  animation: bmsFaqFade 0.2s ease;
+  flex: 1;
+}
+
+.bms-faq-answer {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #4A5568;
+}
+
+@keyframes bmsFaqFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   7. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.bms-cta-banner {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.bms-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bms-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.bms-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 25%,
+    rgba(6, 43, 80, 0.75) 45%,
+    rgba(6, 43, 80, 0.25) 65%,
+    transparent 85%
+  );
+}
+
+.bms-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.8) 0%, rgba(36, 185, 214, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bms-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bms-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bms-cta-content {
+  max-width: 620px;
+}
+
+.bms-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.bms-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #062B50;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.bms-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .bms-hero-badges-col {
+    display: none;
+  }
+
+  .bms-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bms-hero-heading {
+    font-size: 38px;
+  }
+
+  .bms-section-heading {
+    font-size: 30px;
+  }
+
+  .bms-two-col-container {
+    gap: 40px;
+  }
+
+  .bms-connect-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bms-connect-container .bms-text-col {
+    max-width: 600px;
+  }
+
+  .bms-photo {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bms-hero {
+    padding: 44px 0 54px;
+  }
+
+  .bms-hero-heading {
+    font-size: 32px;
+  }
+
+  .bms-hero-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .bms-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 39, 70, 0.95) 0%,
+      rgba(6, 43, 80, 0.98) 100%
+    );
+  }
+
+  .bms-two-col-section {
+    padding: 52px 0;
+  }
+
+  .bms-two-col-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .bms-reverse-order .bms-text-col {
+    order: 1;
+  }
+
+  .bms-reverse-order .bms-media-col {
+    order: 2;
+  }
+
+  .bms-cta-banner {
+    padding: 44px 0;
+  }
+
+  .bms-cta-img {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .bms-cta-text {
+    font-size: 19px;
+  }
+
+  .bms-diagram-area {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bms-diagram-col {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bms-connector-line {
+    display: none;
+  }
+
+  .bms-connect-card {
+    min-width: 130px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bms-hero-heading {
+    font-size: 27px;
+  }
+
+  .bms-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bms-btn-hero-quote,
+  .bms-btn-hero-explore {
+    justify-content: center;
+  }
+}

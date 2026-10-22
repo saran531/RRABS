@@ -1,0 +1,799 @@
+/* ========================================================
+   RRABS ELECTRICAL SERVICES PAGE STYLESHEET
+   Matches reference screenshot exactly
+   ======================================================== */
+
+.electrical-services-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-white);
+  color: #334155;
+  font-family: var(--font-main);
+}
+
+/* Common Section Eyebrow, Heading & Text */
+.elec-eyebrow-line {
+  display: inline-block;
+  width: 18px;
+  height: 2.5px;
+  background-color: #079B36;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.elec-section-heading {
+  color: #102A43;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.elec-paragraph {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+/* ========================================================
+   1. HERO SECTION
+   ======================================================== */
+.elec-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  background-color: #052641;
+  overflow: hidden;
+}
+
+.elec-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.elec-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.elec-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.98) 36%,
+    rgba(5, 38, 65, 0.88) 46%,
+    rgba(5, 38, 65, 0.45) 58%,
+    rgba(5, 38, 65, 0.1) 72%,
+    transparent 85%,
+    transparent 100%
+  );
+}
+
+/* Decorative Mesh on Hero Left */
+.elec-hero-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 2;
+}
+
+/* Green Diagonal Accent on Hero Right */
+.elec-hero-green-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.elec-hero-green-accent::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 180px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(7, 155, 54, 0.28) 0%, rgba(19, 184, 63, 0.02) 100%);
+  transform: rotate(32deg);
+  border-left: 2px solid rgba(19, 184, 63, 0.55);
+}
+
+.elec-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.elec-hero-content {
+  max-width: 640px;
+}
+
+/* Breadcrumb */
+.elec-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 24px;
+}
+
+.elec-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.elec-breadcrumb a:hover {
+  color: #38BDF8;
+}
+
+.elec-breadcrumb-sep {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.elec-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.elec-hero-heading {
+  color: #FFFFFF;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -1px;
+  margin-bottom: 22px;
+}
+
+.elec-hero-paragraph {
+  color: #CBD5E1;
+  font-size: 15.5px;
+  line-height: 1.68;
+}
+
+/* ========================================================
+   2. LIGHTING SYSTEMS SECTION (Row 1)
+   ======================================================== */
+.elec-lighting-section {
+  padding: 68px 24px 34px;
+  background-color: #FFFFFF;
+}
+
+.elec-two-col-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.elec-feature-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #079B36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(7, 155, 54, 0.12);
+}
+
+.elec-media-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(7, 52, 91, 0.08);
+  border: 1px solid #E2E8F0;
+  height: 280px;
+}
+
+.elec-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.elec-media-box:hover .elec-photo {
+  transform: scale(1.03);
+}
+
+/* ========================================================
+   3. POWER DISTRIBUTION SECTION (Row 2)
+   ======================================================== */
+.elec-power-section {
+  position: relative;
+  padding: 34px 24px 68px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.elec-two-col-inverted {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 52px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle Architectural Linework on Right Edge */
+.elec-blueprint-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+/* ========================================================
+   4. WHERE ELECTRICAL SYSTEMS CONNECT SECTION
+   ======================================================== */
+.elec-connect-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: #F8FAFC;
+  border-top: 1px solid #F1F5F9;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.elec-connect-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.elec-connect-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Connected Building Diagram */
+.elec-diagram-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.elec-side-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 3;
+}
+
+.elec-left-nodes {
+  align-items: flex-end;
+}
+
+.elec-right-nodes {
+  align-items: flex-start;
+}
+
+.elec-node-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.elec-node-left {
+  justify-content: flex-end;
+}
+
+.elec-node-right {
+  justify-content: flex-start;
+}
+
+.elec-node-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(7, 52, 91, 0.04);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.elec-node-card:hover {
+  border-color: #079B36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(7, 155, 54, 0.12);
+}
+
+.elec-node-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #079B36;
+  flex-shrink: 0;
+}
+
+.elec-node-card-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #102A43;
+  white-space: nowrap;
+}
+
+.elec-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #079B36;
+  flex-shrink: 0;
+}
+
+/* Center Building Container */
+.elec-center-frame {
+  position: relative;
+  width: 320px;
+  margin: 0;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7, 52, 91, 0.12);
+  border: 1px solid rgba(8, 120, 189, 0.2);
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.elec-building-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Center Badge over Building */
+.elec-center-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #052641;
+  border: 3px solid #079B36;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #FFFFFF;
+  z-index: 3;
+}
+
+.elec-center-badge-text {
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  color: #FFFFFF;
+}
+
+/* ========================================================
+   5. APPLICATIONS SECTION
+   ======================================================== */
+.elec-applications-section {
+  padding: 72px 24px;
+  background-color: #FFFFFF;
+}
+
+.elec-applications-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.elec-applications-header {
+  margin-bottom: 36px;
+}
+
+.elec-applications-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.elec-app-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(7, 52, 91, 0.04);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.elec-app-card:hover {
+  transform: translateY(-4px);
+  border-color: #079B36;
+  box-shadow: 0 8px 20px rgba(7, 52, 91, 0.1);
+}
+
+.elec-app-media {
+  position: relative;
+  width: 100%;
+  height: 124px;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  background-color: #F1F5F9;
+}
+
+.elec-app-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.elec-app-card:hover .elec-app-photo {
+  transform: scale(1.08);
+}
+
+.elec-app-icon-wrap {
+  position: absolute;
+  top: 104px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #079B36;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.elec-app-card:hover .elec-app-icon-wrap {
+  transform: translateX(-50%) scale(1.12);
+  background-color: #E8F7EF;
+  box-shadow: 0 6px 14px rgba(7, 155, 54, 0.3);
+}
+
+.elec-app-body {
+  padding: 26px 12px 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.elec-app-title {
+  color: #102A43;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ========================================================
+   6. FREQUENTLY ASKED QUESTIONS SECTION
+   ======================================================== */
+.elec-faq-section {
+  padding: 72px 24px;
+  background-color: #F8FAFC;
+  border-top: 1px solid #F1F5F9;
+}
+
+.elec-faq-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.elec-faq-header {
+  margin-bottom: 36px;
+}
+
+.elec-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.elec-faq-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(7, 52, 91, 0.04);
+  padding: 24px 28px;
+  transition: all 0.25s ease;
+}
+
+.elec-faq-card:hover {
+  border-color: rgba(7, 155, 54, 0.4);
+  box-shadow: 0 6px 16px rgba(7, 52, 91, 0.08);
+}
+
+.elec-faq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+.elec-faq-question {
+  color: #102A43;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.elec-faq-toggle {
+  color: #079B36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.elec-faq-answer {
+  margin-top: 16px;
+  color: #334155;
+  font-size: 14.5px;
+  line-height: 1.65;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+}
+
+/* ========================================================
+   7. FINAL CALL-TO-ACTION BANNER
+   ======================================================== */
+.elec-cta-section {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  background-color: #052641;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.elec-cta-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+}
+
+.elec-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.elec-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.75) 18%,
+    rgba(5, 38, 65, 0.25) 42%,
+    transparent 68%
+  );
+}
+
+/* Green Diagonal Accent Graphic */
+.elec-cta-green-accent {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 65px;
+  height: 100%;
+  background: linear-gradient(135deg, #079B36 0%, #13B83F 100%);
+  transform: skewX(-24deg);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(7, 155, 54, 0.35);
+}
+
+.elec-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.elec-cta-content {
+  max-width: 680px;
+}
+
+.elec-cta-heading {
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: -0.4px;
+}
+
+.elec-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 26px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
+  border-radius: var(--radius-full);
+  color: #102A43;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.elec-cta-btn:hover {
+  background-color: #E8F7EF;
+  border-color: #079B36;
+  color: #079B36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.elec-cta-btn .cta-arrow-right {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.elec-cta-btn:hover .cta-arrow-right {
+  transform: translateX(4px);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (Desktop, Tablet, Mobile)
+   ======================================================== */
+@media (max-width: 1100px) {
+  .elec-applications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .elec-hero-heading {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 900px) {
+  .elec-two-col-container,
+  .elec-two-col-inverted,
+  .elec-connect-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .elec-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elec-diagram-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .elec-side-nodes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .elec-left-nodes, .elec-right-nodes {
+    align-items: center;
+  }
+
+  .elec-center-frame {
+    width: 100%;
+    max-width: 480px;
+    margin: 12px 0;
+  }
+
+  .elec-connector-line {
+    display: none;
+  }
+
+  .elec-cta-bg {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .elec-cta-green-accent {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .elec-applications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .elec-hero-heading {
+    font-size: 30px;
+  }
+
+  .elec-section-heading {
+    font-size: 24px;
+  }
+
+  .elec-lighting-section,
+  .elec-power-section,
+  .elec-connect-section,
+  .elec-applications-section,
+  .elec-faq-section,
+  .elec-cta-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .elec-cta-heading {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,63 @@
+/* ========================================================
+   Floating Back-to-Top Button
+   - Fixed bottom-right positioning
+   - Brand green/blue styling with soft drop-shadow
+   - Responsive sizing and smooth scroll
+   - Accessible focus-visible state
+   ======================================================== */
+
+.floating-back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #079B36 0%, #13B83F 100%);
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(7, 155, 54, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.floating-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.floating-back-to-top:hover {
+  background: linear-gradient(135deg, #05822D 0%, #0FA036 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 22px rgba(7, 155, 54, 0.45), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.floating-back-to-top:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.floating-back-to-top:focus-visible {
+  outline: 3px solid #0878BD;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .floating-back-to-top {
+    bottom: 24px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}

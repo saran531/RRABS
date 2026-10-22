@@ -1,0 +1,866 @@
+/* ==========================================================================
+   RRABS - Industrial Industry Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.industrial-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #334155;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.ind-hero {
+  position: relative;
+  background-color: #102A43;
+  color: #FFFFFF;
+  padding: 56px 0 68px;
+  overflow: hidden;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.ind-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ind-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay blending deep navy smoothly into the industrial image */
+.ind-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #0d2238 0%,
+    #102A43 36%,
+    rgba(16, 42, 67, 0.96) 44%,
+    rgba(16, 42, 67, 0.65) 55%,
+    rgba(16, 42, 67, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Restrained diagonal green accent band */
+.ind-hero-accent-slash {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 110px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(11, 159, 69, 0.85) 0%, rgba(23, 105, 170, 0.4) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Technical blueprint line-art overlay */
+.ind-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-hero-content {
+  max-width: 620px;
+}
+
+/* Breadcrumb */
+.ind-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.ind-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ind-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.ind-breadcrumb-sep {
+  color: #64748B;
+  font-size: 14px;
+  user-select: none;
+}
+
+.ind-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Heading */
+.ind-hero-heading {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.ind-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+/* Actions */
+.ind-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ind-btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: #0B9F45;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(11, 159, 69, 0.35);
+  transition: all 0.25s ease;
+}
+
+.ind-btn-hero-quote:hover {
+  background: #09883b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11, 159, 69, 0.45);
+}
+
+.ind-btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.ind-btn-hero-explore:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. INDUSTRIAL INTRODUCTION SECTION
+   -------------------------------------------------------------------------- */
+.ind-intro-section {
+  padding: 72px 0;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-intro-decor-left {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 200px;
+  height: 80%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.ind-intro-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ind-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ind-feature-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #F1F8FC;
+  border: 1.5px solid #24B9D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(23, 105, 170, 0.08);
+}
+
+.ind-eyebrow-line {
+  display: block;
+  width: 38px;
+  height: 3px;
+  background-color: #0B9F45;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.ind-section-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #102A43;
+  line-height: 1.22;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.ind-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #4A5568;
+  max-width: 520px;
+}
+
+.ind-media-box {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(16, 42, 67, 0.12);
+  line-height: 0;
+}
+
+.ind-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ind-media-box:hover .ind-photo {
+  transform: scale(1.02);
+}
+
+.ind-corner-accent-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0B9F45 0%, #0B9F45 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-corner-accent-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(315deg, #0B9F45 0%, #0B9F45 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. RELEVANT SYSTEMS SECTION
+   -------------------------------------------------------------------------- */
+.ind-systems-section {
+  padding: 68px 0 80px;
+  background-color: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-systems-decor-right {
+  position: absolute;
+  right: -20px;
+  top: 15%;
+  width: 320px;
+  height: 70%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.ind-systems-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ind-systems-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #102A43;
+  margin-bottom: 36px;
+  letter-spacing: -0.3px;
+}
+
+.ind-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.ind-systems-row-2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 22px;
+}
+
+/* Card with icon and equipment photo */
+.ind-system-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  box-shadow: 0 3px 12px rgba(16, 42, 67, 0.04);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.ind-system-card:hover {
+  transform: translateY(-3px);
+  border-color: #24B9D6;
+  box-shadow: 0 8px 22px rgba(16, 42, 67, 0.09);
+}
+
+.ind-system-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ind-system-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F1F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1769AA;
+  flex-shrink: 0;
+}
+
+.ind-system-thumb-wrap {
+  width: 100px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #102A43;
+  flex-shrink: 0;
+}
+
+.ind-system-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ind-system-card:hover .ind-system-thumb {
+  transform: scale(1.08);
+}
+
+.ind-system-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.ind-system-label {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #102A43;
+  line-height: 1.35;
+  margin: 0;
+  flex: 1;
+}
+
+.ind-system-card-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #F1F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1769AA;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.ind-system-card:hover .ind-system-card-btn {
+  background: #1769AA;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. INTEGRATED PLANNING SECTION
+   -------------------------------------------------------------------------- */
+.ind-planning-section {
+  padding: 76px 0 84px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-planning-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.ind-diagram-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 10px 0;
+}
+
+.ind-diagram-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 3;
+}
+
+.ind-system-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  border-radius: 10px;
+  padding: 9px 16px;
+  box-shadow: 0 4px 14px rgba(23, 105, 170, 0.08);
+  min-width: 140px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.ind-system-tag:hover {
+  transform: translateY(-2px);
+  border-color: #1769AA;
+  box-shadow: 0 6px 18px rgba(23, 105, 170, 0.14);
+}
+
+.ind-tag-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ind-tag-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #102A43;
+  line-height: 1.25;
+}
+
+.ind-diagram-item {
+  display: flex;
+  align-items: center;
+}
+
+.ind-item-left {
+  justify-content: flex-end;
+}
+
+.ind-item-right {
+  justify-content: flex-start;
+}
+
+.ind-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #24B9D6;
+  flex-shrink: 0;
+}
+
+.ind-center-bldg-wrapper {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  max-width: 330px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(16, 42, 67, 0.12);
+  flex-shrink: 0;
+}
+
+.ind-center-bldg-img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   5. INDUSTRIAL IMAGE GALLERY SECTION (4 images)
+   -------------------------------------------------------------------------- */
+.ind-gallery-section {
+  padding: 60px 0 76px;
+  background-color: #F8FAFC;
+}
+
+.ind-gallery-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.ind-gallery-item {
+  position: relative;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(16, 42, 67, 0.08);
+}
+
+.ind-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ind-gallery-item:hover .ind-gallery-img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   6. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.ind-cta-banner {
+  position: relative;
+  background-color: #102A43;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ind-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ind-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.ind-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 25%,
+    rgba(6, 43, 80, 0.75) 45%,
+    rgba(6, 43, 80, 0.25) 65%,
+    transparent 85%
+  );
+}
+
+.ind-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(11, 159, 69, 0.8) 0%, rgba(23, 105, 170, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ind-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ind-cta-content {
+  max-width: 620px;
+}
+
+.ind-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.ind-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #102A43;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.ind-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ind-hero-heading {
+    font-size: 38px;
+  }
+
+  .ind-section-heading {
+    font-size: 30px;
+  }
+
+  .ind-intro-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ind-systems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ind-systems-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ind-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ind-planning-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ind-planning-container .ind-text-col {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ind-hero {
+    padding: 44px 0 54px;
+  }
+
+  .ind-hero-heading {
+    font-size: 32px;
+  }
+
+  .ind-hero-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .ind-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(13, 34, 56, 0.95) 0%,
+      rgba(16, 42, 67, 0.98) 100%
+    );
+  }
+
+  .ind-systems-grid,
+  .ind-systems-row-2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ind-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ind-gallery-item {
+    height: 200px;
+  }
+
+  .ind-cta-banner {
+    padding: 44px 0;
+  }
+
+  .ind-cta-img {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .ind-cta-text {
+    font-size: 19px;
+  }
+
+  .ind-diagram-area {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ind-diagram-col {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ind-connector-line {
+    display: none;
+  }
+
+  .ind-system-tag {
+    min-width: 130px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ind-hero-heading {
+    font-size: 28px;
+  }
+
+  .ind-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ind-btn-hero-quote,
+  .ind-btn-hero-explore {
+    justify-content: center;
+  }
+}

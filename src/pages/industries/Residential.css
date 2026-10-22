@@ -1,0 +1,746 @@
+/* ==========================================================================
+   RRABS - Residential Industry Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.residential-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #344767;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.res-hero {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0 68px;
+  overflow: hidden;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.res-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.res-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay blending navy smoothly into the villa image */
+.res-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 36%,
+    rgba(6, 43, 80, 0.96) 44%,
+    rgba(6, 43, 80, 0.65) 55%,
+    rgba(6, 43, 80, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Diagonal green accent ribbon */
+.res-hero-accent-slash {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 110px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.85) 0%, rgba(36, 185, 214, 0.4) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Technical blueprint line-art overlay */
+.res-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.res-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.res-hero-content {
+  max-width: 620px;
+}
+
+/* Breadcrumb */
+.res-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.res-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.res-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.res-breadcrumb-sep {
+  color: #64748B;
+  font-size: 14px;
+  user-select: none;
+}
+
+.res-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Heading */
+.res-hero-heading {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.res-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+/* Actions */
+.res-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.res-btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: #08A63F;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(8, 166, 63, 0.35);
+  transition: all 0.25s ease;
+}
+
+.res-btn-hero-quote:hover {
+  background: #079137;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 166, 63, 0.45);
+}
+
+.res-btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.res-btn-hero-explore:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. RELEVANT SYSTEMS SECTION
+   -------------------------------------------------------------------------- */
+.res-systems-section {
+  padding: 68px 0 80px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle blueprint villa sketch in the background on right */
+.res-systems-decor-right {
+  position: absolute;
+  right: -20px;
+  top: 15%;
+  width: 320px;
+  height: 70%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.res-systems-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.res-systems-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  margin-bottom: 36px;
+  letter-spacing: -0.3px;
+}
+
+/* 7 cards: 4 in row 1, 3 in row 2 */
+.res-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.res-systems-row-2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.res-system-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  box-shadow: 0 3px 12px rgba(6, 43, 80, 0.04);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.res-system-card:hover {
+  transform: translateY(-3px);
+  border-color: #24B9D6;
+  box-shadow: 0 8px 22px rgba(6, 43, 80, 0.09);
+}
+
+.res-system-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.res-system-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0879D1;
+}
+
+.res-system-card-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #F1F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0879D1;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.res-system-card:hover .res-system-card-btn {
+  background: #0879D1;
+  color: #FFFFFF;
+}
+
+.res-system-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. INTEGRATED PLANNING SECTION
+   -------------------------------------------------------------------------- */
+.res-planning-section {
+  padding: 76px 0 84px;
+  background-color: #F1F8FC;
+  position: relative;
+  overflow: hidden;
+}
+
+.res-planning-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.res-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.res-feature-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(8, 121, 209, 0.08);
+}
+
+.res-eyebrow-line {
+  display: block;
+  width: 38px;
+  height: 3px;
+  background-color: #08A63F;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.res-section-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  line-height: 1.22;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.res-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #4A5568;
+  max-width: 480px;
+}
+
+/* Diagram interactive area */
+.res-diagram-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 10px 0;
+}
+
+.res-diagram-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 3;
+}
+
+.res-system-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  border-radius: 10px;
+  padding: 9px 16px;
+  box-shadow: 0 4px 14px rgba(8, 121, 209, 0.08);
+  min-width: 140px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.res-system-tag:hover {
+  transform: translateY(-2px);
+  border-color: #0879D1;
+  box-shadow: 0 6px 18px rgba(8, 121, 209, 0.14);
+}
+
+.res-tag-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.res-tag-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.25;
+}
+
+.res-diagram-item {
+  display: flex;
+  align-items: center;
+}
+
+.res-item-left {
+  justify-content: flex-end;
+}
+
+.res-item-right {
+  justify-content: flex-start;
+}
+
+.res-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #24B9D6;
+  flex-shrink: 0;
+}
+
+/* Central Villa Illustration/Photo */
+.res-center-villa-wrapper {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  max-width: 330px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(6, 43, 80, 0.12);
+  flex-shrink: 0;
+}
+
+.res-center-villa-img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   4. RESIDENTIAL IMAGE GALLERY SECTION
+   -------------------------------------------------------------------------- */
+.res-gallery-section {
+  padding: 60px 0 76px;
+  background-color: #FFFFFF;
+}
+
+.res-gallery-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.res-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.res-gallery-item {
+  position: relative;
+  height: 230px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(6, 43, 80, 0.08);
+}
+
+.res-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.res-gallery-item:hover .res-gallery-img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.res-cta-banner {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.res-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.res-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.res-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 25%,
+    rgba(6, 43, 80, 0.75) 45%,
+    rgba(6, 43, 80, 0.25) 65%,
+    transparent 85%
+  );
+}
+
+.res-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.8) 0%, rgba(36, 185, 214, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.res-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.res-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.res-cta-content {
+  max-width: 620px;
+}
+
+.res-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.res-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #062B50;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.res-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .res-hero-heading {
+    font-size: 38px;
+  }
+
+  .res-systems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .res-systems-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .res-planning-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .res-planning-container .res-text-col {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .res-hero {
+    padding: 44px 0 54px;
+  }
+
+  .res-hero-heading {
+    font-size: 32px;
+  }
+
+  .res-hero-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .res-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 39, 70, 0.95) 0%,
+      rgba(6, 43, 80, 0.98) 100%
+    );
+  }
+
+  .res-systems-grid,
+  .res-systems-row-2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .res-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .res-gallery-item {
+    height: 200px;
+  }
+
+  .res-cta-banner {
+    padding: 44px 0;
+  }
+
+  .res-cta-img {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .res-cta-text {
+    font-size: 19px;
+  }
+
+  .res-diagram-area {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .res-diagram-col {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .res-connector-line {
+    display: none;
+  }
+
+  .res-system-tag {
+    min-width: 130px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .res-hero-heading {
+    font-size: 28px;
+  }
+
+  .res-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .res-btn-hero-quote,
+  .res-btn-hero-explore {
+    justify-content: center;
+  }
+}

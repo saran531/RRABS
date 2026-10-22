@@ -1,0 +1,351 @@
+/* ========================================================
+   RRABS SITE-WIDE REUSABLE ANIMATION SYSTEM
+   - Configurable delay (2.2s for initial page entry)
+   - Left-to-right & Right-to-left smooth easing
+   - Card grid staggered entrances (alternating & center-stationary)
+   - Mobile and prefers-reduced-motion optimizations
+   ======================================================== */
+
+:root {
+  --anim-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --anim-duration-move: 1.2s;
+  --anim-duration-opacity: 0.9s;
+  --anim-offset-x: 60px;
+  --anim-start-delay: 2.2s;
+  --anim-stagger-step: 0.15s;
+}
+
+/* Ensure no horizontal scroll during horizontal entrance without breaking sticky positioning */
+html, body, .main-layout, .main-content {
+  overflow-x: clip;
+}
+
+/* ========================================================
+   HERO SECTIONS: Prompt, immediate above-the-fold rendering
+   ======================================================== */
+[class*="-hero"],
+.hero-banner,
+.hero-container,
+[class*="-hero-container"],
+[class*="-hero-content"],
+[class*="-hero-bg"],
+[class*="-hero-img"],
+.hero-image,
+.hero-bg-media,
+.hero-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+[class*="-hero"] .anim-left,
+[class*="-hero"] .anim-right,
+.hero-banner .anim-left,
+.hero-banner .anim-right {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* ========================================================
+   1. BASE REVEAL STATES & DIRECTIONS
+   ======================================================== */
+
+/* Left reveal: enters from -60px to 0 */
+.anim-left,
+.reveal-left,
+[data-reveal="left"] {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--anim-offset-x)));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+/* Right reveal: enters from +60px to 0 */
+.anim-right,
+.reveal-right,
+[data-reveal="right"] {
+  opacity: 0;
+  transform: translateX(var(--anim-offset-x));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+/* Stationary / Fade reveal: no horizontal movement */
+.anim-stationary,
+.reveal-stationary,
+[data-reveal="stationary"],
+.anim-fade,
+.reveal-fade,
+[data-reveal="fade"] {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease);
+  will-change: opacity;
+}
+
+/* ========================================================
+   2. REVEALED / VISIBLE STATES
+   ======================================================== */
+
+.is-visible.anim-left,
+.is-visible.reveal-left,
+.is-visible[data-reveal="left"],
+.is-visible .anim-left,
+.is-visible .reveal-left,
+.is-visible [data-reveal="left"],
+.is-revealed.anim-left,
+.is-revealed.reveal-left,
+.is-revealed[data-reveal="left"],
+.is-revealed .anim-left,
+.is-revealed .reveal-left,
+.is-revealed [data-reveal="left"] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.is-visible.anim-right,
+.is-visible.reveal-right,
+.is-visible[data-reveal="right"],
+.is-visible .anim-right,
+.is-visible .reveal-right,
+.is-visible [data-reveal="right"],
+.is-revealed.anim-right,
+.is-revealed.reveal-right,
+.is-revealed[data-reveal="right"],
+.is-revealed .anim-right,
+.is-revealed .reveal-right,
+.is-revealed [data-reveal="right"] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.is-visible.anim-stationary,
+.is-visible.reveal-stationary,
+.is-visible[data-reveal="stationary"],
+.is-visible .anim-stationary,
+.is-visible .reveal-stationary,
+.is-visible [data-reveal="stationary"],
+.is-visible.anim-fade,
+.is-visible.reveal-fade,
+.is-visible[data-reveal="fade"],
+.is-visible .anim-fade,
+.is-visible .reveal-fade,
+.is-visible [data-reveal="fade"],
+.is-revealed.anim-stationary,
+.is-revealed.reveal-stationary,
+.is-revealed[data-reveal="stationary"],
+.is-revealed .anim-stationary,
+.is-revealed .reveal-stationary,
+.is-revealed [data-reveal="stationary"] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================================
+   3. CARD GRIDS & ALTERNATING REVEAL
+   ======================================================== */
+
+/* Alternating Grid:
+   Odd children enter from Left, Even children enter from Right */
+.grid-alternating > *:nth-child(odd),
+[data-anim-grid="alternating"] > *:nth-child(odd) {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--anim-offset-x)));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.grid-alternating > *:nth-child(even),
+[data-anim-grid="alternating"] > *:nth-child(even) {
+  opacity: 0;
+  transform: translateX(var(--anim-offset-x));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.is-revealed.grid-alternating > *,
+.is-revealed .grid-alternating > *,
+.is-revealed[data-anim-grid="alternating"] > *,
+.is-revealed [data-anim-grid="alternating"] > *,
+.is-visible.grid-alternating > *,
+.is-visible .grid-alternating > *,
+.is-visible[data-anim-grid="alternating"] > *,
+.is-visible [data-anim-grid="alternating"] > * {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger Delays for Alternating Grids */
+.is-revealed.grid-alternating > *:nth-child(1),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(1),
+.is-visible.grid-alternating > *:nth-child(1),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(1) { transition-delay: 0.05s; }
+
+.is-revealed.grid-alternating > *:nth-child(2),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(2),
+.is-visible.grid-alternating > *:nth-child(2),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(2) { transition-delay: 0.18s; }
+
+.is-revealed.grid-alternating > *:nth-child(3),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(3),
+.is-visible.grid-alternating > *:nth-child(3),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(3) { transition-delay: 0.31s; }
+
+.is-revealed.grid-alternating > *:nth-child(4),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(4),
+.is-visible.grid-alternating > *:nth-child(4),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(4) { transition-delay: 0.44s; }
+
+.is-revealed.grid-alternating > *:nth-child(5),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(5),
+.is-visible.grid-alternating > *:nth-child(5),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(5) { transition-delay: 0.57s; }
+
+.is-revealed.grid-alternating > *:nth-child(6),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(6),
+.is-visible.grid-alternating > *:nth-child(6),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(6) { transition-delay: 0.70s; }
+
+.is-revealed.grid-alternating > *:nth-child(7),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(7),
+.is-visible.grid-alternating > *:nth-child(7),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(7) { transition-delay: 0.83s; }
+
+.is-revealed.grid-alternating > *:nth-child(8),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(8),
+.is-visible.grid-alternating > *:nth-child(8),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(8) { transition-delay: 0.96s; }
+
+.is-revealed.grid-alternating > *:nth-child(9),
+.is-revealed [data-anim-grid="alternating"] > *:nth-child(9),
+.is-visible.grid-alternating > *:nth-child(9),
+.is-visible [data-anim-grid="alternating"] > *:nth-child(9) { transition-delay: 1.09s; }
+
+/* Special 7-Card Center-Stationary Layout (e.g. Home page & Core Services):
+   Cards 1, 2, 3 enter from Left
+   Card 4 (center) remains STATIONARY
+   Cards 5, 6, 7 enter from Right */
+.grid-services-7 > *:nth-child(1),
+.grid-services-7 > *:nth-child(2),
+.grid-services-7 > *:nth-child(3),
+[data-anim-grid="services-7"] > *:nth-child(1),
+[data-anim-grid="services-7"] > *:nth-child(2),
+[data-anim-grid="services-7"] > *:nth-child(3) {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--anim-offset-x)));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.grid-services-7 > *:nth-child(4),
+[data-anim-grid="services-7"] > *:nth-child(4) {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease);
+  will-change: opacity;
+}
+
+.grid-services-7 > *:nth-child(5),
+.grid-services-7 > *:nth-child(6),
+.grid-services-7 > *:nth-child(7),
+[data-anim-grid="services-7"] > *:nth-child(5),
+[data-anim-grid="services-7"] > *:nth-child(6),
+[data-anim-grid="services-7"] > *:nth-child(7) {
+  opacity: 0;
+  transform: translateX(var(--anim-offset-x));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.is-revealed.grid-services-7 > *,
+.is-revealed [data-anim-grid="services-7"] > *,
+.is-visible.grid-services-7 > *,
+.is-visible [data-anim-grid="services-7"] > * {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.is-revealed.grid-services-7 > *:nth-child(1),
+.is-visible.grid-services-7 > *:nth-child(1) { transition-delay: 0.1s; }
+.is-revealed.grid-services-7 > *:nth-child(2),
+.is-visible.grid-services-7 > *:nth-child(2) { transition-delay: 0.25s; }
+.is-revealed.grid-services-7 > *:nth-child(3),
+.is-visible.grid-services-7 > *:nth-child(3) { transition-delay: 0.4s; }
+.is-revealed.grid-services-7 > *:nth-child(5),
+.is-visible.grid-services-7 > *:nth-child(5) { transition-delay: 0.4s; }
+.is-revealed.grid-services-7 > *:nth-child(6),
+.is-visible.grid-services-7 > *:nth-child(6) { transition-delay: 0.25s; }
+.is-revealed.grid-services-7 > *:nth-child(7),
+.is-visible.grid-services-7 > *:nth-child(7) { transition-delay: 0.1s; }
+
+/* Split Cards Grid (first half from Left, second half from Right) */
+.grid-split-2col > *:nth-child(odd),
+[data-anim-grid="split"] > *:nth-child(odd) {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--anim-offset-x)));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.grid-split-2col > *:nth-child(even),
+[data-anim-grid="split"] > *:nth-child(even) {
+  opacity: 0;
+  transform: translateX(var(--anim-offset-x));
+  transition: opacity var(--anim-duration-opacity) var(--anim-ease),
+              transform var(--anim-duration-move) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+.is-revealed.grid-split-2col > *,
+.is-revealed [data-anim-grid="split"] > *,
+.is-visible.grid-split-2col > *,
+.is-visible [data-anim-grid="split"] > * {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================================
+   4. RESPONSIVE DESIGN ADJUSTMENTS
+   ======================================================== */
+@media (max-width: 768px) {
+  :root {
+    --anim-offset-x: 25px;
+    --anim-duration-move: 1.0s;
+  }
+}
+
+/* ========================================================
+   5. ACCESSIBILITY: PREFERS REDUCED MOTION
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .anim-left,
+  .anim-right,
+  .anim-stationary,
+  .anim-fade,
+  .reveal-left,
+  .reveal-right,
+  .reveal-stationary,
+  .reveal-fade,
+  [data-reveal="left"],
+  [data-reveal="right"],
+  [data-reveal="stationary"],
+  [data-reveal="fade"],
+  .grid-alternating > *,
+  [data-anim-grid="alternating"] > *,
+  .grid-services-7 > *,
+  [data-anim-grid="services-7"] > *,
+  .grid-split-2col > *,
+  [data-anim-grid="split"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,816 @@
+/* ==========================================================================
+   RRABS - ELV Systems Service Page Styles
+   Recreates reference screenshot UI with exact visual fidelity and responsiveness.
+   ========================================================================== */
+
+.elv-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #344767;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.elv-hero {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0 68px;
+  overflow: hidden;
+}
+
+.elv-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.elv-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay seamlessly blending dark navy to the camera image */
+.elv-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 36%,
+    rgba(6, 43, 80, 0.96) 44%,
+    rgba(6, 43, 80, 0.65) 55%,
+    rgba(6, 43, 80, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Diagonal accent green/cyan ribbon across top */
+.elv-hero-accent-slash {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 90px;
+  height: 180px;
+  background: linear-gradient(135deg, #08A63F 0%, #24B9D6 100%);
+  transform: skewX(-32deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Blueprint mesh background */
+.elv-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 480px;
+  height: 380px;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.elv-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.elv-hero-content {
+  max-width: 620px;
+}
+
+/* Breadcrumbs */
+.elv-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #E2EEF5;
+  margin-bottom: 22px;
+}
+
+.elv-breadcrumb a {
+  color: #E2EEF5;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.elv-breadcrumb a:hover {
+  color: #24B9D6;
+}
+
+.elv-breadcrumb-sep {
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.elv-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Hero Heading */
+.elv-hero-heading {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #FFFFFF;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+/* Hero Paragraph */
+.elv-hero-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #E2E8F0;
+  margin: 0 0 32px;
+  max-width: 560px;
+}
+
+/* Hero CTA Buttons */
+.elv-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #08A63F;
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(8, 166, 63, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-hero-quote:hover {
+  background-color: #068f35;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(8, 166, 63, 0.45);
+}
+
+.btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(5, 39, 70, 0.85);
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.btn-hero-explore:hover {
+  background-color: rgba(6, 43, 80, 0.95);
+  border-color: #24B9D6;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   SHARED CONTENT SECTION STYLES (CCTV, Access Control, Networking)
+   -------------------------------------------------------------------------- */
+.elv-section {
+  position: relative;
+  padding: 56px 0;
+  overflow: hidden;
+}
+
+.elv-section.bg-white {
+  background-color: #FFFFFF;
+}
+
+.elv-section.bg-pale {
+  background-color: #F1F8FC;
+}
+
+/* Blueprint CAD background line art decoration */
+.elv-cad-bg {
+  position: absolute;
+  top: 0;
+  width: 360px;
+  height: 100%;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.elv-cad-left {
+  left: 0;
+}
+
+.elv-cad-right {
+  right: 0;
+}
+
+.elv-section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.elv-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.elv-two-col.reverse {
+  direction: ltr;
+}
+
+/* Text Content Column */
+.elv-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Cyan squircle icon badge */
+.elv-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background-color: #EBF7FC;
+  border: 1.5px solid #24B9D6;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(36, 185, 214, 0.12);
+}
+
+.elv-section-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #062B50;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.elv-section-desc {
+  font-size: 0.92rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0 0 26px;
+  max-width: 480px;
+}
+
+/* "Learn More →" Pill Button */
+.btn-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: #062B50;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  border: 1.5px solid #0879D1;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: #0879D1;
+  color: #FFFFFF;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(8, 121, 209, 0.25);
+}
+
+.btn-learn-more:hover svg {
+  stroke: #FFFFFF;
+}
+
+/* Image Column with diagonal green corner accents */
+.elv-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.elv-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 510px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(6, 43, 80, 0.08);
+}
+
+.elv-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Diagonal green corner accents matching reference screenshot */
+.elv-corner-accent {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.accent-top-right {
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, transparent 50%, #08A63F 50%);
+}
+
+.accent-top-left {
+  top: 0;
+  left: 0;
+  background: linear-gradient(-135deg, transparent 50%, #08A63F 50%);
+}
+
+/* --------------------------------------------------------------------------
+   5. ELV VS IT NETWORKING COMPARISON SECTION
+   -------------------------------------------------------------------------- */
+.elv-comparison-section {
+  padding: 60px 0;
+  background-color: #FFFFFF;
+}
+
+.elv-comparison-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.elv-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.elv-comparison-intro {
+  max-width: 470px;
+}
+
+.elv-accent-line {
+  width: 38px;
+  height: 3px;
+  background-color: #0879D1;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.elv-comparison-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #062B50;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.elv-comparison-desc {
+  font-size: 0.92rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0;
+}
+
+.elv-comparison-desc a {
+  color: #0879D1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.elv-comparison-desc a:hover {
+  color: #062B50;
+}
+
+/* Two Comparison Cards & Center Exchange Badge */
+.elv-cards-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.elv-compare-card {
+  flex: 1;
+  max-width: 240px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2EEF5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(6, 43, 80, 0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Header Bar */
+.elv-card-header {
+  padding: 12px 16px;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.header-dark-blue {
+  background-color: #062B50;
+}
+
+.header-eng-blue {
+  background-color: #0879D1;
+}
+
+/* Card Body */
+.elv-card-body {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.elv-icons-combo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #0879D1;
+}
+
+.elv-plus-sign {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0879D1;
+}
+
+.elv-card-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #062B50;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Center Green Two-Way Arrow Badge */
+.elv-exchange-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #08A63F;
+  border-radius: 50%;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(8, 166, 63, 0.35);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   6. FREQUENTLY ASKED QUESTIONS SECTION
+   -------------------------------------------------------------------------- */
+.elv-faq-section {
+  padding: 56px 0 68px;
+  background-color: #FFFFFF;
+}
+
+.elv-faq-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.elv-faq-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #062B50;
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+.elv-accordion-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2EEF5;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(6, 43, 80, 0.04);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.elv-accordion-card:hover {
+  border-color: #CBD5E1;
+}
+
+.elv-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.elv-accordion-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #062B50;
+  margin: 0;
+  padding-right: 16px;
+}
+
+.elv-accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #08A63F;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.elv-accordion-body {
+  padding: 0 24px 22px;
+  border-top: 1px solid transparent;
+}
+
+.elv-accordion-body p {
+  font-size: 0.92rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.elv-cta-banner {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.elv-cta-container {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  min-height: 150px;
+}
+
+.elv-cta-left {
+  position: relative;
+  padding: 38px 32px 38px 48px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Blueprint line CAD decoration behind CTA text */
+.elv-cta-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.elv-cta-text {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #FFFFFF;
+  margin: 0 0 20px;
+  max-width: 580px;
+  letter-spacing: -0.01em;
+}
+
+.btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  color: #062B50;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.22s ease;
+}
+
+.btn-cta-quote:hover {
+  background-color: #F1F8FC;
+  color: #0879D1;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+.btn-cta-quote svg {
+  color: #0879D1;
+}
+
+.elv-cta-right {
+  position: relative;
+  height: 100%;
+  min-height: 170px;
+  overflow: hidden;
+}
+
+.elv-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+/* Diagonal overlay between text and building image */
+.elv-cta-diagonal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, #062B50 0%, rgba(6, 43, 80, 0.45) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVENESS (Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .elv-hero-img {
+    width: 60%;
+    opacity: 0.45;
+  }
+
+  .elv-two-col {
+    gap: 36px;
+  }
+
+  .elv-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .elv-comparison-intro {
+    max-width: 100%;
+  }
+
+  .elv-cta-container {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .elv-hero {
+    padding: 40px 0 52px;
+  }
+
+  .elv-hero-img {
+    width: 100%;
+    opacity: 0.28;
+  }
+
+  .elv-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 43, 80, 0.95) 0%,
+      rgba(6, 43, 80, 0.98) 100%
+    );
+  }
+
+  .elv-section {
+    padding: 44px 0;
+  }
+
+  .elv-two-col {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Keep natural logical flow on mobile */
+  .elv-two-col.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .elv-image-wrapper {
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .elv-cards-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .elv-compare-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .elv-exchange-badge {
+    transform: rotate(90deg);
+    margin: -8px 0;
+  }
+
+  .elv-cta-container {
+    grid-template-columns: 1fr;
+  }
+
+  .elv-cta-left {
+    padding: 36px 24px;
+  }
+
+  .elv-cta-right {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .elv-cta-diagonal-overlay {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(180deg, #062B50 0%, transparent 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .elv-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero-quote,
+  .btn-hero-explore {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .elv-section-heading,
+  .elv-comparison-heading,
+  .elv-faq-heading {
+    font-size: 1.5rem;
+  }
+}

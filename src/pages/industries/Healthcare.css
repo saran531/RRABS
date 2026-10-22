@@ -1,0 +1,866 @@
+/* ==========================================================================
+   RRABS - Healthcare Industry Page Styles
+   Exact UI recreation matching reference screenshot.
+   ========================================================================== */
+
+.healthcare-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #344767;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hc-hero {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0 68px;
+  overflow: hidden;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.hc-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hc-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Gradient overlay blending navy smoothly into the hospital image */
+.hc-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 36%,
+    rgba(6, 43, 80, 0.96) 44%,
+    rgba(6, 43, 80, 0.65) 55%,
+    rgba(6, 43, 80, 0.15) 70%,
+    transparent 84%,
+    transparent 100%
+  );
+}
+
+/* Diagonal green accent ribbon */
+.hc-hero-accent-slash {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 110px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.85) 0%, rgba(36, 185, 214, 0.4) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Technical blueprint line-art overlay */
+.hc-hero-mesh {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 520px;
+  height: 420px;
+  opacity: 0.18;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hc-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hc-hero-content {
+  max-width: 620px;
+}
+
+/* Breadcrumb */
+.hc-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 22px;
+}
+
+.hc-breadcrumb a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hc-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.hc-breadcrumb-sep {
+  color: #64748B;
+  font-size: 14px;
+  user-select: none;
+}
+
+.hc-breadcrumb-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Heading */
+.hc-hero-heading {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.hc-hero-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #E2E8F0;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+/* Actions */
+.hc-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hc-btn-hero-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: #08A63F;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(8, 166, 63, 0.35);
+  transition: all 0.25s ease;
+}
+
+.hc-btn-hero-quote:hover {
+  background: #079137;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 166, 63, 0.45);
+}
+
+.hc-btn-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.hc-btn-hero-explore:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. HEALTHCARE INTRODUCTION SECTION
+   -------------------------------------------------------------------------- */
+.hc-intro-section {
+  padding: 72px 0;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.hc-intro-decor-left {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 200px;
+  height: 80%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.hc-intro-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hc-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hc-feature-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #F1F8FC;
+  border: 1.5px solid #24B9D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(8, 121, 209, 0.08);
+}
+
+.hc-eyebrow-line {
+  display: block;
+  width: 38px;
+  height: 3px;
+  background-color: #08A63F;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.hc-section-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  line-height: 1.22;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.hc-paragraph {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #4A5568;
+  max-width: 520px;
+}
+
+.hc-media-box {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(6, 43, 80, 0.12);
+  line-height: 0;
+}
+
+.hc-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hc-media-box:hover .hc-photo {
+  transform: scale(1.02);
+}
+
+.hc-corner-accent-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #08A63F 0%, #08A63F 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hc-corner-accent-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(315deg, #08A63F 0%, #08A63F 50%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. RELEVANT SYSTEMS SECTION
+   -------------------------------------------------------------------------- */
+.hc-systems-section {
+  padding: 68px 0 80px;
+  background-color: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+}
+
+.hc-systems-decor-right {
+  position: absolute;
+  right: -20px;
+  top: 15%;
+  width: 320px;
+  height: 70%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.hc-systems-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.hc-systems-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #062B50;
+  margin-bottom: 36px;
+  letter-spacing: -0.3px;
+}
+
+.hc-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.hc-systems-row-2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 22px;
+}
+
+/* Card with icon and equipment photo */
+.hc-system-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEAF4;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  box-shadow: 0 3px 12px rgba(6, 43, 80, 0.04);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.hc-system-card:hover {
+  transform: translateY(-3px);
+  border-color: #24B9D6;
+  box-shadow: 0 8px 22px rgba(6, 43, 80, 0.09);
+}
+
+.hc-system-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.hc-system-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F1F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0879D1;
+  flex-shrink: 0;
+}
+
+.hc-system-thumb-wrap {
+  width: 100px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #062B50;
+  flex-shrink: 0;
+}
+
+.hc-system-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hc-system-card:hover .hc-system-thumb {
+  transform: scale(1.08);
+}
+
+.hc-system-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.hc-system-label {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.35;
+  margin: 0;
+  flex: 1;
+}
+
+.hc-system-card-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #F1F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0879D1;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.hc-system-card:hover .hc-system-card-btn {
+  background: #0879D1;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. INTEGRATED PLANNING SECTION
+   -------------------------------------------------------------------------- */
+.hc-planning-section {
+  padding: 76px 0 84px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.hc-planning-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hc-diagram-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 10px 0;
+}
+
+.hc-diagram-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 3;
+}
+
+.hc-system-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #24B9D6;
+  border-radius: 10px;
+  padding: 9px 16px;
+  box-shadow: 0 4px 14px rgba(8, 121, 209, 0.08);
+  min-width: 140px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.hc-system-tag:hover {
+  transform: translateY(-2px);
+  border-color: #0879D1;
+  box-shadow: 0 6px 18px rgba(8, 121, 209, 0.14);
+}
+
+.hc-tag-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hc-tag-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #062B50;
+  line-height: 1.25;
+}
+
+.hc-diagram-item {
+  display: flex;
+  align-items: center;
+}
+
+.hc-item-left {
+  justify-content: flex-end;
+}
+
+.hc-item-right {
+  justify-content: flex-start;
+}
+
+.hc-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #24B9D6;
+  flex-shrink: 0;
+}
+
+.hc-center-bldg-wrapper {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  max-width: 330px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(6, 43, 80, 0.12);
+  flex-shrink: 0;
+}
+
+.hc-center-bldg-img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   5. HEALTHCARE IMAGE GALLERY SECTION (4 images)
+   -------------------------------------------------------------------------- */
+.hc-gallery-section {
+  padding: 60px 0 76px;
+  background-color: #F8FAFC;
+}
+
+.hc-gallery-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hc-gallery-item {
+  position: relative;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(6, 43, 80, 0.08);
+}
+
+.hc-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hc-gallery-item:hover .hc-gallery-img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   6. BOTTOM CALL-TO-ACTION BANNER
+   -------------------------------------------------------------------------- */
+.hc-cta-banner {
+  position: relative;
+  background-color: #062B50;
+  color: #FFFFFF;
+  padding: 56px 0;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hc-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hc-cta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.hc-cta-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052746 0%,
+    #062B50 25%,
+    rgba(6, 43, 80, 0.75) 45%,
+    rgba(6, 43, 80, 0.25) 65%,
+    transparent 85%
+  );
+}
+
+.hc-cta-green-slash {
+  position: absolute;
+  top: -20px;
+  left: 54%;
+  width: 80px;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(8, 166, 63, 0.8) 0%, rgba(36, 185, 214, 0.3) 100%);
+  transform: skewX(-28deg);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hc-cta-mesh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hc-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hc-cta-content {
+  max-width: 620px;
+}
+
+.hc-cta-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.hc-btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  color: #062B50;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.hc-btn-cta-quote:hover {
+  background: #F1F8FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hc-hero-heading {
+    font-size: 38px;
+  }
+
+  .hc-section-heading {
+    font-size: 30px;
+  }
+
+  .hc-intro-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hc-systems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hc-systems-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hc-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hc-planning-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hc-planning-container .hc-text-col {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hc-hero {
+    padding: 44px 0 54px;
+  }
+
+  .hc-hero-heading {
+    font-size: 32px;
+  }
+
+  .hc-hero-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .hc-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 39, 70, 0.95) 0%,
+      rgba(6, 43, 80, 0.98) 100%
+    );
+  }
+
+  .hc-systems-grid,
+  .hc-systems-row-2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hc-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hc-gallery-item {
+    height: 200px;
+  }
+
+  .hc-cta-banner {
+    padding: 44px 0;
+  }
+
+  .hc-cta-img {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .hc-cta-text {
+    font-size: 19px;
+  }
+
+  .hc-diagram-area {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hc-diagram-col {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hc-connector-line {
+    display: none;
+  }
+
+  .hc-system-tag {
+    min-width: 130px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hc-hero-heading {
+    font-size: 28px;
+  }
+
+  .hc-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hc-btn-hero-quote,
+  .hc-btn-hero-explore {
+    justify-content: center;
+  }
+}

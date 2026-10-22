@@ -1,0 +1,711 @@
+/* ========================================================
+   RRABS SERVICES HUB PAGE STYLESHEET
+   Matches reference screenshot exactly
+   ======================================================== */
+
+.services-hub-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-white);
+  color: #334155;
+  font-family: var(--font-main);
+}
+
+/* Common Section Elements */
+.services-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--color-eng-blue);
+  margin-bottom: 12px;
+}
+
+.services-eyebrow-line {
+  display: inline-block;
+  width: 18px;
+  height: 2.5px;
+  background-color: #079B36;
+  border-radius: 2px;
+}
+
+.services-section-heading {
+  color: #102A43;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.services-paragraph {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+/* ========================================================
+   1. HERO SECTION
+   ======================================================== */
+.services-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background-color: #052641;
+  overflow: hidden;
+}
+
+.services-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.services-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  filter: contrast(1.05) saturate(1.08) brightness(1.02);
+}
+
+.services-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    #052641 34%,
+    rgba(5, 38, 65, 0.88) 46%,
+    rgba(5, 38, 65, 0.4) 60%,
+    rgba(5, 38, 65, 0.08) 75%,
+    transparent 100%
+  );
+}
+
+.services-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.services-hero-content {
+  max-width: 600px;
+}
+
+.services-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #7DD3FC;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.services-hero-eyebrow-line {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background-color: #079B36;
+  border-radius: 2px;
+}
+
+.services-hero-heading {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  margin-bottom: 24px;
+}
+
+.services-hero-paragraph {
+  color: #CBD5E1;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+/* Hero Overlay Connected Badges (Right Side) */
+.services-hero-diagram {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+}
+
+.hero-nodes-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-node-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  background: rgba(16, 42, 67, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(7, 155, 54, 0.45);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.hero-node-badge:hover {
+  background: rgba(16, 42, 67, 0.95);
+  border-color: #13B83F;
+  transform: translateY(-2px);
+}
+
+.hero-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #079B36;
+}
+
+/* ========================================================
+   2. SEVEN CORE SERVICE AREAS SECTION
+   ======================================================== */
+.core-services-section {
+  padding: 72px 24px;
+  background-color: #FFFFFF;
+}
+
+.core-services-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Header with Heading on Left and Subtext on Right */
+.core-services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 32px;
+}
+
+.core-services-header-left {
+  max-width: 580px;
+}
+
+.core-services-header-right {
+  max-width: 460px;
+  text-align: right;
+}
+
+.core-services-header-desc {
+  color: #5C7088;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Cards Grid */
+.core-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Row 1: 4 Cards */
+.services-row-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Row 2: 3 Cards */
+.services-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Individual Service Card */
+.service-card-item {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 16px rgba(7, 52, 91, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  transition: all 0.3s ease;
+}
+
+.service-card-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(7, 155, 54, 0.4);
+  box-shadow: 0 12px 28px rgba(7, 52, 91, 0.12);
+}
+
+/* Card Image Box with Floating Icon Badge */
+.service-card-media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  background-color: #F1F5F9;
+}
+
+.service-card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card-item:hover .service-card-photo {
+  transform: scale(1.05);
+}
+
+.service-floating-icon {
+  position: absolute;
+  top: 178px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #079B36;
+  box-shadow: 0 4px 12px rgba(7, 52, 91, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-floating-icon svg {
+  display: block;
+  stroke: #079B36;
+  color: #079B36;
+}
+
+.service-card-item:hover .service-floating-icon {
+  transform: scale(1.1);
+  background-color: #EAF8EE;
+  box-shadow: 0 6px 16px rgba(7, 155, 54, 0.25);
+}
+
+/* Card Body Content */
+.service-card-body {
+  padding: 34px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.service-card-title {
+  color: #102A43;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.service-card-desc {
+  color: #334155;
+  font-size: 13.5px;
+  line-height: 1.62;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Card CTA Button (Pill shaped) */
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1.5px solid #079B36;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: #102A43;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all 0.25s ease;
+}
+
+.service-card-cta:hover {
+  background-color: #079B36;
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+.service-card-cta:hover svg {
+  stroke: #FFFFFF;
+}
+
+/* ========================================================
+   3. CHOOSING THE RIGHT SCOPE SECTION
+   ======================================================== */
+.scope-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: #F3F6FA;
+  overflow: hidden;
+}
+
+.scope-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.scope-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right Side: Building Cutaway Visual & Surrounding Badges */
+.scope-diagram-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.scope-side-nodes {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.scope-left-nodes {
+  align-items: flex-end;
+  gap: 36px;
+}
+
+.scope-right-nodes {
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.scope-node-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scope-node-left {
+  justify-content: flex-end;
+}
+
+.scope-node-right {
+  justify-content: flex-start;
+}
+
+.scope-node-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(7, 52, 91, 0.06);
+  white-space: nowrap;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.scope-node-pill:hover {
+  border-color: #079B36;
+  transform: translateY(-1px);
+}
+
+.scope-node-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #102A43;
+  white-space: nowrap;
+}
+
+.scope-node-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #EAF8EE;
+  border: 1.5px solid #079B36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scope-connector-line {
+  width: 32px;
+  height: 0;
+  border-top: 1.5px dashed #079B36;
+  flex-shrink: 0;
+}
+
+/* Central Building Frame */
+.scope-center-frame {
+  position: relative;
+  width: 320px;
+  margin: 0;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7, 52, 91, 0.12);
+  border: 1px solid rgba(8, 120, 189, 0.18);
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.scope-building-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================================================
+   4. FINAL CALL-TO-ACTION BANNER
+   ======================================================== */
+.services-final-cta-section {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  background-color: #052641;
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.services-final-cta-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+}
+
+.services-final-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.services-final-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.75) 18%,
+    rgba(5, 38, 65, 0.25) 42%,
+    transparent 68%
+  );
+}
+
+/* Green Diagonal Accent Graphic */
+.services-cta-green-accent {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 65px;
+  height: 100%;
+  background: linear-gradient(135deg, #079B36 0%, #13B83F 100%);
+  transform: skewX(-24deg);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(7, 155, 54, 0.35);
+}
+
+.services-final-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.services-final-cta-content {
+  max-width: 640px;
+}
+
+.services-final-cta-heading {
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: -0.4px;
+}
+
+.services-final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 26px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
+  border-radius: var(--radius-full);
+  color: #102A43;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.services-final-cta-btn:hover {
+  background-color: #E8F7EF;
+  border-color: #079B36;
+  color: #079B36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.services-final-cta-btn .cta-arrow-right {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.services-final-cta-btn:hover .cta-arrow-right {
+  transform: translateX(4px);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (Desktop, Tablet, Mobile)
+   ======================================================== */
+@media (max-width: 1200px) {
+  .services-row-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-hero-container {
+    gap: 24px;
+  }
+  .services-hero-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  .services-hero-container {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+  }
+  .services-hero-diagram {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .core-services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .core-services-header-right {
+    text-align: left;
+    max-width: 100%;
+  }
+  .scope-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .scope-diagram-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .scope-side-nodes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .scope-left-nodes, .scope-right-nodes {
+    align-items: center;
+  }
+  .scope-center-frame {
+    width: 100%;
+    max-width: 480px;
+    margin: 12px 0;
+  }
+  .scope-connector-line {
+    display: none;
+  }
+  .services-final-cta-bg {
+    width: 100%;
+    opacity: 0.35;
+  }
+  .services-cta-green-accent {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-row-top,
+  .services-row-bottom {
+    grid-template-columns: 1fr;
+  }
+  .services-hero-heading {
+    font-size: 32px;
+  }
+  .services-section-heading {
+    font-size: 26px;
+  }
+  .core-services-section,
+  .scope-section,
+  .services-final-cta-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .services-final-cta-heading {
+    font-size: 20px;
+  }
+}

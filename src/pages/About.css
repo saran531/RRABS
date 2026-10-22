@@ -1,0 +1,890 @@
+/* ========================================================
+   RRABS ABOUT PAGE STYLESHEET
+   Matches reference image About(1).png exactly
+   ======================================================== */
+
+.about-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-white);
+  color: var(--color-body);
+}
+
+/* Common Section Eyebrow, Titles & Paragraphs */
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--color-eng-blue);
+  margin-bottom: 12px;
+}
+
+.about-eyebrow-line {
+  display: inline-block;
+  width: 18px;
+  height: 2.5px;
+  background-color: var(--color-brand-green);
+  border-radius: 2px;
+}
+
+.about-section-heading {
+  color: var(--color-deep-navy);
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.22;
+  margin-bottom: 18px;
+}
+
+.about-paragraph {
+  color: var(--color-body);
+  font-size: 15px;
+  line-height: 1.68;
+  font-weight: 400;
+}
+
+/* ========================================================
+   1. HERO BANNER
+   ======================================================== */
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-dark-navy);
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+.about-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.98) 36%,
+    rgba(5, 38, 65, 0.88) 46%,
+    rgba(5, 38, 65, 0.45) 58%,
+    rgba(5, 38, 65, 0.1) 72%,
+    transparent 85%,
+    transparent 100%
+  );
+}
+
+/* Decorative Mesh Graphic on Hero Left */
+.about-hero-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 2;
+}
+
+/* Green Diagonal Accent on Hero Right */
+.about-hero-green-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.about-hero-green-accent::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 180px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(7, 155, 54, 0.28) 0%, rgba(19, 184, 63, 0.02) 100%);
+  transform: rotate(32deg);
+  border-left: 2px solid rgba(19, 184, 63, 0.55);
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.about-hero-content {
+  max-width: 660px;
+}
+
+.about-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #7DD3FC;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-hero-eyebrow-line {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--color-brand-green);
+  border-radius: 2px;
+}
+
+.about-hero-heading {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  margin-bottom: 24px;
+}
+
+.about-hero-paragraph {
+  color: #CBD5E1;
+  font-size: 16px;
+  line-height: 1.68;
+  max-width: 600px;
+}
+
+/* ========================================================
+   2. SECTION: WHO WE ARE
+   ======================================================== */
+.who-we-are-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.who-we-are-blueprint-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+.who-we-are-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.who-we-are-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.who-we-are-text-col .about-paragraph {
+  margin-bottom: 28px;
+}
+
+.who-we-are-btn-wrap {
+  display: flex;
+}
+
+/* Right side combined media & service list panel */
+.who-we-are-media-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.who-we-are-photo-box {
+  min-height: 310px;
+  overflow: hidden;
+}
+
+.who-we-are-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.who-we-are-media-panel:hover .who-we-are-photo {
+  transform: scale(1.03);
+}
+
+.who-we-are-service-list {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+  background-color: #FFFFFF;
+  border-left: 1px solid #F1F5F9;
+}
+
+.service-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-list-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: #EAF8EE;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.service-list-item:hover .service-list-icon {
+  background-color: #D6F2DE;
+}
+
+.service-list-label {
+  color: var(--color-deep-navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ========================================================
+   3. SECTION: OUR APPROACH
+   ======================================================== */
+.our-approach-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: var(--color-light-blue);
+  overflow: hidden;
+}
+
+.approach-architectural-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.our-approach-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.our-approach-media-col {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(8, 120, 189, 0.15);
+  background-color: #FFFFFF;
+}
+
+.our-approach-img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.our-approach-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   4. SECTION: WHAT WE FOCUS ON
+   ======================================================== */
+.what-we-focus-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.what-we-focus-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.what-we-focus-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+}
+
+.focus-card {
+  background-color: var(--color-white);
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(7, 52, 91, 0.04);
+  transition: all 0.25s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-brand-green);
+  box-shadow: 0 6px 16px rgba(7, 155, 54, 0.12);
+}
+
+.focus-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #13B83F;
+  box-shadow: 0 2px 6px rgba(19, 184, 63, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.focus-card:hover .focus-card-icon-wrap {
+  background-color: #EAF8EE;
+}
+
+.focus-card-label {
+  color: var(--color-deep-navy);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ========================================================
+   5. SECTION: INTEGRATED BUILDING SYSTEMS
+   ======================================================== */
+.integrated-systems-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: var(--color-light-blue);
+  overflow: hidden;
+}
+
+.integrated-systems-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.integrated-systems-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Connected Building Diagram */
+.integrated-diagram-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  padding: 20px 0;
+}
+
+.diagram-side-nodes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 228px;
+  z-index: 3;
+}
+
+.left-nodes {
+  align-items: flex-end;
+}
+
+.right-nodes {
+  align-items: flex-start;
+}
+
+.diagram-node-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.diagram-node-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-deep-navy);
+  white-space: nowrap;
+}
+
+.diagram-node-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-brand-green);
+  box-shadow: 0 2px 8px rgba(7, 155, 54, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.diagram-node-item:hover .diagram-node-badge {
+  transform: scale(1.1);
+  background-color: #EAF8EE;
+}
+
+/* Central Building Frame */
+.diagram-center-frame {
+  position: relative;
+  width: 290px;
+  margin: 0;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7, 52, 91, 0.12);
+  border: 1px solid rgba(8, 120, 189, 0.2);
+  background: var(--color-white);
+  flex-shrink: 0;
+}
+
+.diagram-building-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Service Connector Lines */
+.diagram-connector-line {
+  height: 0;
+  border-top: 1.5px dashed var(--color-brand-green);
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.diagram-connector-line.left-line {
+  width: 36px;
+  margin-left: -4px;
+  margin-right: -2px;
+}
+
+.diagram-connector-line.right-line {
+  width: 36px;
+  margin-right: -4px;
+  margin-left: -2px;
+}
+
+.integrated-systems-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   6. SECTION: BASED IN MADURAI
+   ======================================================== */
+.based-madurai-section {
+  position: relative;
+  padding: 72px 24px;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.based-madurai-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.based-madurai-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Madurai Photo Frame with Diagonal Green Accent & Location Badge */
+.based-madurai-media-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  min-height: 290px;
+  background-color: #07345B;
+}
+
+.based-madurai-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 290px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Diagonal Green Accent along left edge of photo */
+.based-madurai-diagonal-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(7, 155, 54, 0.9) 0%, rgba(19, 184, 63, 0.7) 100%);
+  clip-path: polygon(0 0, 100% 0, 30% 100%, 0 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* White Rounded Location Badge */
+.madurai-location-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  z-index: 3;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: 8px 18px 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(5, 38, 65, 0.22);
+}
+
+.madurai-pin-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-deep-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.madurai-badge-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-deep-navy);
+  line-height: 1.25;
+}
+
+/* ========================================================
+   7. FINAL CALL-TO-ACTION BANNER
+   ======================================================== */
+.about-final-cta-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-dark-navy);
+  overflow: hidden;
+  margin-top: 36px;
+  border-top: 2px solid rgba(7, 155, 54, 0.45);
+  border-bottom: 2px solid rgba(8, 120, 189, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.about-final-cta-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-final-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.about-final-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #052641 0%,
+    rgba(5, 38, 65, 0.98) 45%,
+    rgba(5, 38, 65, 0.8) 65%,
+    rgba(5, 38, 65, 0.2) 100%
+  );
+}
+
+.about-final-cta-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.25;
+  z-index: 2;
+}
+
+.about-final-cta-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.about-final-cta-content {
+  max-width: 680px;
+}
+
+.about-final-cta-heading {
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: -0.4px;
+}
+
+.about-final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  color: var(--color-deep-navy);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.about-final-cta-btn:hover {
+  background-color: #F1F5F9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.about-final-cta-btn .chat-icon-green {
+  display: flex;
+  align-items: center;
+}
+
+.about-final-cta-btn .cta-arrow-right {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.about-final-cta-btn:hover .cta-arrow-right {
+  transform: translateX(3px);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (Desktop, Tablet, Mobile)
+   ======================================================== */
+@media (max-width: 1120px) {
+  .who-we-are-container,
+  .our-approach-container,
+  .what-we-focus-container,
+  .based-madurai-container {
+    gap: 36px;
+  }
+
+  .focus-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero-heading {
+    font-size: 40px;
+  }
+
+  .integrated-systems-container {
+    gap: 32px;
+  }
+
+  .diagram-center-frame {
+    width: 240px;
+  }
+
+  .diagram-building-img {
+    height: 250px;
+  }
+
+  .diagram-side-nodes {
+    height: 210px;
+  }
+
+  .diagram-node-label {
+    font-size: 11px;
+  }
+
+  .diagram-connector-line.left-line,
+  .diagram-connector-line.right-line {
+    width: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .who-we-are-container,
+  .our-approach-container,
+  .what-we-focus-container,
+  .integrated-systems-container,
+  .based-madurai-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-final-cta-bg {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .who-we-are-media-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .who-we-are-service-list {
+    border-left: none;
+    border-top: 1px solid #F1F5F9;
+    padding: 24px;
+  }
+
+  .integrated-diagram-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .diagram-side-nodes {
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .left-nodes, .right-nodes {
+    align-items: center;
+  }
+
+  .diagram-center-frame {
+    width: 100%;
+    max-width: 480px;
+    margin: 12px 0;
+  }
+
+  .diagram-connector-line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-heading {
+    font-size: 32px;
+  }
+
+  .about-section-heading {
+    font-size: 28px;
+  }
+
+  .focus-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-container,
+  .who-we-are-section,
+  .our-approach-section,
+  .what-we-focus-section,
+  .integrated-systems-section,
+  .based-madurai-section,
+  .about-final-cta-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-final-cta-heading {
+    font-size: 22px;
+  }
+}
