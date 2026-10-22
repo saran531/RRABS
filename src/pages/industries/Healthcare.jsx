@@ -18,7 +18,7 @@ import './Healthcare.css';
 
 // Project image assets
 import healthcareHeroImg from '../../assets/images/industries/healthcare.jpg';
-import hospitalCorridorImg from '../../assets/images/about/who-we-are-hvac.jpg';
+import hospitalCorridorImg from '../../assets/images/industries/test_corridor.jpg';
 import electricalImg from '../../assets/images/services/electrical.jpg';
 import hvacImg from '../../assets/images/services/hvac.jpg';
 import plumbingImg from '../../assets/images/services/plumbing.jpg';
@@ -26,7 +26,7 @@ import fireImg from '../../assets/images/services/fire-fighting.jpg';
 import cctvImg from '../../assets/images/services/elv.jpg';
 import networkImg from '../../assets/images/services/network-switches.jpg';
 import bmsImg from '../../assets/images/services/bms-monitoring-workstation.jpg';
-import plantHvacImg from '../../assets/images/services/bms-hvac-chillers.jpg';
+import testPhoto3Img from '../../assets/images/industries/test_photo3.jpg';
 import patientFacilityImg from '../../assets/images/industries/hospital-patient-room.jpg';
 import operatingTheatreImg from '../../assets/images/industries/hospital-operating-room.jpg';
 
@@ -431,11 +431,11 @@ export default function Healthcare() {
               />
             </div>
 
-            {/* Gallery Image 3: HVAC mechanical plant equipment */}
+            {/* Gallery Image 3: Healthcare facilities / technical setup */}
             <div className="hc-gallery-item">
               <img 
-                src={plantHvacImg} 
-                alt="HVAC mechanical chillers and plant equipment for hospital climate control" 
+                src={testPhoto3Img} 
+                alt="Hospital facility and healthcare infrastructure" 
                 className="hc-gallery-img" 
               />
             </div>

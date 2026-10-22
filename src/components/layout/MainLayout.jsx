@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import WebsiteTransition from '../common/WebsiteTransition.jsx';
 import TopBar from '../common/TopBar.jsx';
 import Header from '../common/Header.jsx';
 import Footer from '../common/Footer.jsx';
@@ -9,6 +10,7 @@ import SiteAnimation from '../common/SiteAnimation.jsx';
 export default function MainLayout() {
   return (
     <div className="main-layout">
+      <WebsiteTransition />
       <ScrollToTop />
       <TopBar />
       <Header />

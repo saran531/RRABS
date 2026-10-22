@@ -1,0 +1,554 @@
+/* ========================================================
+   RRABS WEBSITE GLOBAL SPLIT-PANEL PAGE TRANSITION
+   Two elegant architectural doors opening from the center
+   ======================================================== */
+
+.website-transition-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: transparent;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.website-transition-overlay.transition-splitting {
+  pointer-events: none;
+}
+
+/* ========================================================
+   1. SPLIT DOOR PANELS (LEFT & RIGHT)
+   ======================================================== */
+.trans-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  height: 100%;
+  background-color: #061B2B;
+  z-index: 2;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateX(0);
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.trans-panel-left {
+  left: 0;
+  box-shadow: 4px 0 28px rgba(0, 0, 0, 0.5);
+}
+
+.trans-panel-right {
+  right: 0;
+  box-shadow: -4px 0 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Door opening outwards to left and right */
+.trans-panel-left.split-open {
+  transform: translateX(-100%);
+}
+
+.trans-panel-right.split-open {
+  transform: translateX(100%);
+}
+
+/* Panel Blueprint Grid Pattern */
+.trans-panel-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(34, 195, 214, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 195, 214, 0.08) 1px, transparent 1px);
+}
+
+/* Glowing Inner Edge Borders where doors meet at center */
+.trans-panel-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(34, 195, 214, 0.9) 25%,
+    rgba(7, 155, 54, 0.95) 50%,
+    rgba(34, 195, 214, 0.9) 75%,
+    transparent 100%
+  );
+  z-index: 3;
+}
+
+.trans-panel-border.right-edge {
+  right: 0;
+  box-shadow: 2px 0 16px rgba(34, 195, 214, 0.6), 1px 0 6px rgba(7, 155, 54, 0.5);
+}
+
+.trans-panel-border.left-edge {
+  left: 0;
+  box-shadow: -2px 0 16px rgba(34, 195, 214, 0.6), -1px 0 6px rgba(7, 155, 54, 0.5);
+}
+
+/* Center Seam Energy Pulse */
+.trans-center-seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #22C3D6 20%,
+    #079B36 50%,
+    #22C3D6 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 16px #22C3D6, 0 0 28px #079B36;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.trans-center-seam.seam-active {
+  opacity: 1;
+}
+
+/* ========================================================
+   2. CENTRAL CONTENT WRAPPER
+   (Blueprint building, systems, and logo)
+   ======================================================== */
+.trans-content-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: 
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trans-content-wrapper.content-fade-out {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.trans-radial-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 760px;
+  height: 640px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(23, 105, 170, 0.32) 0%,
+    rgba(34, 195, 214, 0.14) 40%,
+    transparent 70%
+  );
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+/* Technical HUD Data */
+.trans-hud {
+  position: absolute;
+  inset: 0;
+  padding: 24px 32px;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #22C3D6;
+  opacity: 0;
+  animation: transHudFade 0.5s ease-out 0.1s forwards;
+}
+
+@keyframes transHudFade {
+  to {
+    opacity: 0.85;
+  }
+}
+
+.trans-hud-top-left,
+.trans-hud-top-right,
+.trans-hud-bottom-left,
+.trans-hud-bottom-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trans-hud-top-left {
+  top: 24px;
+  left: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.trans-hud-top-right {
+  top: 24px;
+  right: 28px;
+}
+
+.trans-hud-bottom-left {
+  bottom: 24px;
+  left: 28px;
+}
+
+.trans-hud-bottom-right {
+  bottom: 24px;
+  right: 28px;
+}
+
+.trans-hud-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+.trans-hud-sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: rgba(34, 195, 214, 0.75);
+}
+
+.trans-hud-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #079B36;
+  box-shadow: 0 0 8px #079B36;
+  animation: transDotBlink 1s infinite alternate;
+}
+
+@keyframes transDotBlink {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Building SVG Container */
+.trans-graphic-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.trans-building-svg {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  display: block;
+}
+
+/* Base Line Animations */
+.trans-draw-fast {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: transLineDraw 0.5s ease-out 0.1s forwards;
+}
+
+.trans-building-outline {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  animation: transLineDraw 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.trans-draw-mid {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: transLineDraw 0.6s ease-out 0.5s forwards;
+}
+
+.trans-spire {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: transLineDraw 0.45s ease-out 0.65s forwards;
+}
+
+@keyframes transLineDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Building Systems Circuits */
+.trans-circuit-flow-fast {
+  stroke-dashoffset: 100;
+  animation: transFlowCircuits 0.8s linear infinite;
+}
+
+.trans-circuit-flow-reverse {
+  stroke-dashoffset: 100;
+  animation: transFlowCircuitsRev 1s linear infinite;
+}
+
+@keyframes transFlowCircuits {
+  from { stroke-dashoffset: 60; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes transFlowCircuitsRev {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 60; }
+}
+
+/* Node Pulses */
+.trans-node-pulse {
+  animation: transSpirePulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes transSpirePulse {
+  from { transform: scale(0.9); opacity: 0.6; }
+  to { transform: scale(1.3); opacity: 1; }
+}
+
+.trans-safety-node {
+  animation: transSafetyGlow 0.7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes transSafetyGlow {
+  from { opacity: 0.5; r: 3.5; }
+  to { opacity: 1; r: 5; }
+}
+
+.trans-data-node {
+  animation: transDataGlow 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes transDataGlow {
+  from { opacity: 0.4; }
+  to { opacity: 0.9; }
+}
+
+/* Soft Diagonal Light Sweep Across Building */
+.trans-light-sweep {
+  position: absolute;
+  top: -20%;
+  left: -40%;
+  width: 180%;
+  height: 140%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(34, 195, 214, 0.1) 45%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(34, 195, 214, 0.1) 55%,
+    transparent 62%,
+    transparent 100%
+  );
+  transform: rotate(6deg);
+  pointer-events: none;
+  opacity: 0;
+  animation: transSweepGlide 0.85s cubic-bezier(0.2, 0.8, 0.4, 1) 0.65s forwards;
+}
+
+@keyframes transSweepGlide {
+  0% {
+    opacity: 0;
+    transform: translate(-30%, -20%) rotate(6deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(35%, 25%) rotate(6deg);
+  }
+}
+
+/* ========================================================
+   3. BRAND REVEAL (LOGO & GREEN ACCENT)
+   ======================================================== */
+.trans-brand-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  animation: transBrandFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+}
+
+@keyframes transBrandFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -44%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.trans-logo-card {
+  background: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 32px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(34, 195, 214, 0.25),
+    0 0 1px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.trans-logo-image {
+  height: 52px;
+  width: auto;
+  max-width: 210px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Drawing Green Accent Line */
+.trans-green-line-wrap {
+  width: 210px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.trans-green-accent-line {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #079B36 0%, #13B83F 100%);
+  box-shadow: 0 0 8px rgba(7, 155, 54, 0.8);
+  border-radius: 2px;
+  animation: transGreenDraw 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+}
+
+@keyframes transGreenDraw {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.trans-brand-caption {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #E2E8F0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  animation: transCaptionIn 0.35s ease-out 1.25s forwards;
+}
+
+@keyframes transCaptionIn {
+  to {
+    opacity: 0.95;
+  }
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN
+   ======================================================== */
+@media (max-width: 768px) {
+  .trans-hud {
+    padding: 16px 18px;
+  }
+  .trans-hud-top-left .trans-hud-sub,
+  .trans-hud-bottom-left,
+  .trans-hud-bottom-right {
+    display: none;
+  }
+  .trans-graphic-container {
+    max-width: 90vw;
+  }
+  .trans-logo-card {
+    padding: 10px 20px;
+  }
+  .trans-logo-image {
+    height: 42px;
+    max-width: 170px;
+  }
+  .trans-green-line-wrap {
+    width: 170px;
+  }
+  .trans-brand-caption {
+    font-size: 9.5px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 420px) {
+  .trans-logo-image {
+    height: 36px;
+    max-width: 150px;
+  }
+  .trans-green-line-wrap {
+    width: 150px;
+  }
+}
+
+/* ========================================================
+   PREFERS REDUCED MOTION
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .trans-panel {
+    transition: transform 0.3s ease;
+  }
+  .trans-panel-grid,
+  .trans-hud,
+  .trans-draw-fast,
+  .trans-building-outline,
+  .trans-draw-mid,
+  .trans-spire,
+  .trans-circuit-flow-fast,
+  .trans-circuit-flow-reverse,
+  .trans-node-pulse,
+  .trans-safety-node,
+  .trans-data-node,
+  .trans-light-sweep,
+  .trans-brand-wrapper,
+  .trans-green-accent-line,
+  .trans-brand-caption {
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

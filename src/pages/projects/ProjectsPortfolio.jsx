@@ -19,19 +19,15 @@ import {
   NetworkNodesIcon,
   SettingsIcon
 } from '../../components/common/Icons.jsx';
+import { projectsData } from './projectsData.js';
 import './ProjectsPortfolio.css';
 
-// Project image assets
+// Hero and CTA image assets
 import heroBuildingImg from '../../assets/images/services/bms-hvac-chillers.jpg';
 import commercialImg from '../../assets/images/industries/commercial.jpg';
 import hvacImg from '../../assets/images/about/who-we-are-hvac.jpg';
 import fireImg from '../../assets/images/services/fire-fighting.jpg';
 import electricalImg from '../../assets/images/services/electrical.jpg';
-import residentialImg from '../../assets/images/industries/residential.jpg';
-import healthcareImg from '../../assets/images/industries/healthcare.jpg';
-import approachPlansImg from '../../assets/images/about/approach-plans-helmet.jpg';
-import hospitalityImg from '../../assets/images/industries/hospitality.jpg';
-import institutionalImg from '../../assets/images/industries/institutional.jpg';
 import ctaBuildingImg from '../../assets/images/services/services-cta.jpg';
 
 export default function ProjectsPortfolio() {
@@ -70,71 +66,7 @@ export default function ProjectsPortfolio() {
     { id: 'bms', label: 'BMS', icon: SettingsIcon }
   ];
 
-  const projects = [
-    {
-      id: 1,
-      name: 'Gopuram Cinema / Residency',
-      category: 'Residential',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: residentialImg,
-      slug: 'gopuram-cinema-residency'
-    },
-    {
-      id: 2,
-      name: 'JJ Arul Hospital',
-      category: 'Healthcare',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: healthcareImg,
-      slug: 'jj-arul-hospital'
-    },
-    {
-      id: 3,
-      name: 'Marutham',
-      category: 'Residential',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: approachPlansImg,
-      slug: 'marutham'
-    },
-    {
-      id: 4,
-      name: 'Silver Stone Resort',
-      category: 'Hospitality',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: hospitalityImg,
-      slug: 'silver-stone-resort'
-    },
-    {
-      id: 5,
-      name: 'Sri Kamatchi Medical Centre',
-      category: 'Healthcare',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: healthcareImg,
-      slug: 'sri-kamatchi-medical-centre'
-    },
-    {
-      id: 6,
-      name: 'Peral City Engineering Builders',
-      category: 'Commercial',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: commercialImg,
-      slug: 'peral-city-engineering-builders'
-    },
-    {
-      id: 7,
-      name: 'D.A.S.P Smart Hall',
-      category: 'Institutional',
-      location: 'To be confirmed',
-      scope: 'To be confirmed',
-      image: institutionalImg,
-      slug: 'dasp-smart-hall'
-    }
-  ];
+  const projects = projectsData;
 
   const getCategoryIcon = (category) => {
     switch (category) {
@@ -320,11 +252,13 @@ export default function ProjectsPortfolio() {
             {filteredProjects.map((project) => (
               <article key={project.id} className="port-card">
                 <div className="port-card-media">
-                  <img 
-                    src={project.image} 
-                    alt={project.name} 
-                    className="port-card-img" 
-                  />
+                  <Link to={`/projects/${project.slug}`} className="port-card-media-link" tabIndex={-1} aria-hidden="true">
+                    <img 
+                      src={project.image} 
+                      alt={project.name} 
+                      className="port-card-img" 
+                    />
+                  </Link>
                   <span className="port-category-badge">
                     <span className="port-badge-icon">
                       {getCategoryIcon(project.category)}
@@ -334,7 +268,9 @@ export default function ProjectsPortfolio() {
                 </div>
 
                 <div className="port-card-body">
-                  <h3 className="port-card-title">{project.name}</h3>
+                  <h3 className="port-card-title">
+                    <Link to={`/projects/${project.slug}`}>{project.name}</Link>
+                  </h3>
 
                   <div className="port-card-meta">
                     <div className="port-meta-row">

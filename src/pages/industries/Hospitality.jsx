@@ -18,7 +18,7 @@ import './Hospitality.css';
 
 // Project image assets
 import hospitalityHeroImg from '../../assets/images/industries/hospitality.jpg';
-import hotelLobbyImg from '../../assets/images/about/who-we-are-hvac.jpg';
+import luxuryImg from '../../assets/images/industries/Luxury.png';
 import electricalImg from '../../assets/images/services/electrical.jpg';
 import hvacImg from '../../assets/images/services/hvac.jpg';
 import plumbingImg from '../../assets/images/services/plumbing.jpg';
@@ -202,7 +202,7 @@ export default function Hospitality() {
           {/* Right Column: Hotel lobby/reception image with green diagonal corners */}
           <div className="hosp-media-box">
             <img 
-              src={hotelLobbyImg} 
+              src={luxuryImg} 
               alt="Luxury hotel lobby and reception interior with chandeliers" 
               className="hosp-photo" 
             />

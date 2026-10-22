@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import rrabsLogo from '../../assets/images/logo/RRABS_Logo.png';
-import Logo from './Logo.jsx';
 import { ChevronDown, ArrowRight, Menu, X } from './Icons.jsx';
 import './Header.css';
 
@@ -9,9 +8,35 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [industriesDropdown, setIndustriesDropdown] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+
   const location = useLocation();
   const normalize = (p) => p.replace(/\/+$/, '') || '/';
   const currentPath = normalize(location.pathname);
+
+  // Close menus when route changes
+  const [prevPath, setPrevPath] = useState(location.pathname);
+  if (prevPath !== location.pathname) {
+    setPrevPath(location.pathname);
+    setMobileMenuOpen(false);
+    setServicesDropdown(false);
+    setIndustriesDropdown(false);
+    setMobileServicesOpen(false);
+    setMobileIndustriesOpen(false);
+  }
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const isHomeActive = currentPath === '/';
   const isAboutActive = currentPath === '/about';
@@ -57,7 +82,7 @@ export default function Header() {
   const industriesLinks = [
     { name: 'Industries Overview', path: '/industries/' },
     { name: 'Residential', path: '/industries/residential/' },
-    { name: 'Commercial Buildings', path: '/industries/commercial/' },
+    { name: 'Commercial', path: '/industries/commercial/' },
     { name: 'Healthcare', path: '/industries/healthcare/' },
     { name: 'Hospitality', path: '/industries/hospitality/' },
     { name: 'Industrial', path: '/industries/industrial/' },
@@ -68,6 +93,8 @@ export default function Header() {
     setMobileMenuOpen(false);
     setServicesDropdown(false);
     setIndustriesDropdown(false);
+    setMobileServicesOpen(false);
+    setMobileIndustriesOpen(false);
   };
 
   return (
@@ -231,93 +258,187 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu & Backdrop */}
       {mobileMenuOpen && (
-        <div className="mobile-nav-drawer">
-          <ul className="mobile-nav-list">
-            <li>
-              <Link 
-                to="/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isHomeActive ? 'active' : ''}`}
-                aria-current={isHomeActive ? 'page' : undefined}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/about/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isAboutActive ? 'active' : ''}`}
-                aria-current={isAboutActive ? 'page' : undefined}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isServicesActive ? 'active' : ''}`}
-                aria-current={isServicesActive ? 'page' : undefined}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/industries/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isIndustriesActive ? 'active' : ''}`}
-                aria-current={isIndustriesActive ? 'page' : undefined}
-              >
-                Industries
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/projects/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isProjectsActive ? 'active' : ''}`}
-                aria-current={isProjectsActive ? 'page' : undefined}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/insights/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isInsightsActive ? 'active' : ''}`}
-                aria-current={isInsightsActive ? 'page' : undefined}
-              >
-                Insights
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/contact/" 
-                onClick={closeMobileMenu} 
-                className={`mobile-nav-link ${isContactActive ? 'active' : ''}`}
-                aria-current={isContactActive ? 'page' : undefined}
-              >
-                Contact
-              </Link>
-            </li>
-            <li className="mobile-nav-cta">
-              <Link 
-                to="/request-a-quote/" 
-                onClick={closeMobileMenu} 
-                className={`header-quote-btn mobile-quote-btn ${isQuoteActive ? 'active' : ''}`}
-                aria-current={isQuoteActive ? 'page' : undefined}
-              >
-                <span>Get a Quote</span>
-                <ArrowRight size={15} color="#FFFFFF" />
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <>
+          <div 
+            className="mobile-backdrop" 
+            onClick={closeMobileMenu} 
+            aria-hidden="true" 
+          />
+          <div className="mobile-nav-drawer" id="mobile-nav-menu">
+            <ul className="mobile-nav-list">
+              <li>
+                <Link 
+                  to="/" 
+                  onClick={closeMobileMenu} 
+                  className={`mobile-nav-link ${isHomeActive ? 'active' : ''}`}
+                  aria-current={isHomeActive ? 'page' : undefined}
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  to="/about/" 
+                  onClick={closeMobileMenu} 
+                  className={`mobile-nav-link ${isAboutActive ? 'active' : ''}`}
+                  aria-current={isAboutActive ? 'page' : undefined}
+                >
+                  About
+                </Link>
+              </li>
+
+              {/* Services Submenu */}
+              <li className={`mobile-nav-item has-submenu ${mobileServicesOpen ? 'expanded' : ''}`}>
+                <div 
+                  className={`mobile-nav-header ${isServicesActive ? 'active' : ''}`}
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={mobileServicesOpen}
+                  aria-controls="mobile-services-list"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setMobileServicesOpen(!mobileServicesOpen);
+                    }
+                  }}
+                >
+                  <span className="mobile-nav-text">Services</span>
+                  <button
+                    type="button"
+                    className={`mobile-submenu-toggle ${mobileServicesOpen ? 'open' : ''}`}
+                    aria-label={mobileServicesOpen ? 'Collapse Services submenu' : 'Expand Services submenu'}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileServicesOpen(!mobileServicesOpen);
+                    }}
+                  >
+                    <ChevronDown size={18} className="mobile-chevron" />
+                  </button>
+                </div>
+
+                {mobileServicesOpen && (
+                  <ul className="mobile-submenu-list" id="mobile-services-list">
+                    {servicesLinks.map((item) => {
+                      const isItemActive = normalize(item.path) === currentPath;
+                      return (
+                        <li key={item.path} className="mobile-submenu-item">
+                          <Link 
+                            to={item.path} 
+                            onClick={closeMobileMenu} 
+                            className={`mobile-submenu-link ${isItemActive ? 'active' : ''}`}
+                            aria-current={isItemActive ? 'page' : undefined}
+                          >
+                            <span>{item.name}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+
+              {/* Industries Submenu */}
+              <li className={`mobile-nav-item has-submenu ${mobileIndustriesOpen ? 'expanded' : ''}`}>
+                <div 
+                  className={`mobile-nav-header ${isIndustriesActive ? 'active' : ''}`}
+                  onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={mobileIndustriesOpen}
+                  aria-controls="mobile-industries-list"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setMobileIndustriesOpen(!mobileIndustriesOpen);
+                    }
+                  }}
+                >
+                  <span className="mobile-nav-text">Industries</span>
+                  <button
+                    type="button"
+                    className={`mobile-submenu-toggle ${mobileIndustriesOpen ? 'open' : ''}`}
+                    aria-label={mobileIndustriesOpen ? 'Collapse Industries submenu' : 'Expand Industries submenu'}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileIndustriesOpen(!mobileIndustriesOpen);
+                    }}
+                  >
+                    <ChevronDown size={18} className="mobile-chevron" />
+                  </button>
+                </div>
+
+                {mobileIndustriesOpen && (
+                  <ul className="mobile-submenu-list" id="mobile-industries-list">
+                    {industriesLinks.map((item) => {
+                      const isItemActive = normalize(item.path) === currentPath;
+                      return (
+                        <li key={item.path} className="mobile-submenu-item">
+                          <Link 
+                            to={item.path} 
+                            onClick={closeMobileMenu} 
+                            className={`mobile-submenu-link ${isItemActive ? 'active' : ''}`}
+                            aria-current={isItemActive ? 'page' : undefined}
+                          >
+                            <span>{item.name}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+
+              <li>
+                <Link 
+                  to="/projects/" 
+                  onClick={closeMobileMenu} 
+                  className={`mobile-nav-link ${isProjectsActive ? 'active' : ''}`}
+                  aria-current={isProjectsActive ? 'page' : undefined}
+                >
+                  Projects
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  to="/insights/" 
+                  onClick={closeMobileMenu} 
+                  className={`mobile-nav-link ${isInsightsActive ? 'active' : ''}`}
+                  aria-current={isInsightsActive ? 'page' : undefined}
+                >
+                  Insights
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  to="/contact/" 
+                  onClick={closeMobileMenu} 
+                  className={`mobile-nav-link ${isContactActive ? 'active' : ''}`}
+                  aria-current={isContactActive ? 'page' : undefined}
+                >
+                  Contact
+                </Link>
+              </li>
+
+              <li className="mobile-nav-cta">
+                <Link 
+                  to="/request-a-quote/" 
+                  onClick={closeMobileMenu} 
+                  className={`header-quote-btn mobile-quote-btn ${isQuoteActive ? 'active' : ''}`}
+                  aria-current={isQuoteActive ? 'page' : undefined}
+                >
+                  <span>Get a Quote</span>
+                  <ArrowRight size={15} color="#FFFFFF" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </>
       )}
     </header>
   );
