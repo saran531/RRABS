@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 import rrabsLogo from '../../assets/images/logo/RRABS_Logo.png';
-import Logo from './Logo.jsx';
 import { MapPin, Mail, Phone, ArrowRight } from './Icons.jsx';
 import './Footer.css';
 
@@ -165,7 +164,20 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-bottom-container">
-          <p>© {new Date().getFullYear()} RR Advanced Building Systems (RRABS). All rights reserved.</p>
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} RR Advanced Building Systems (RRABS). All rights reserved.
+          </p>
+          <p className="footer-developer-credit">
+            Designed &amp; Developed by :{' '}
+            <a
+              href="https://www.staticsavvymedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-developer-link"
+            >
+              Staticsavvymedia
+            </a>
+          </p>
         </div>
       </div>
     </footer>
